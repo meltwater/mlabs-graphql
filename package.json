@@ -1,16 +1,16 @@
 {
-  "name": "@meltwater/makenew-node-lib",
-  "version": "4.1.9",
-  "description": "npm package skeleton for Meltwater Node.js libraries.",
+  "name": "@meltwater/mlabs-graphql",
+  "version": "0.0.0",
+  "description": "GraphQL client and server toolkit.",
   "main": "dist/index.js",
   "module": "index.js",
   "keywords": [
     "meltwater",
     "node"
   ],
-  "homepage": "https://github.com/meltwater/makenew-node-lib",
-  "bugs": "https://github.com/meltwater/makenew-node-lib/issues",
-  "repository": "meltwater/makenew-node-lib",
+  "homepage": "https://github.com/meltwater/mlabs-graphql",
+  "bugs": "https://github.com/meltwater/mlabs-graphql/issues",
+  "repository": "meltwater/mlabs-graphql",
   "license": "SEE LICENSE IN LICENSE.txt",
   "author": {
     "name": "Evan Sosenko",
