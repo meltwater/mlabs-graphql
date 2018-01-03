@@ -29,22 +29,21 @@ $ yarn add @meltwater/mlabs-graphql
 
 ## Usage
 
-<!--- TODO: Update usage example for added module(s). -->
-
 **See the complete [API documentation](./docs) and [working examples](./examples).**
 
-This package provides an async function which checks if its argument is true.
+Create and run a GraphQL Koa server with
 
 ```js
-import isTrue from '@meltwater/mlabs-graphql'
+import Koa from 'koa'
+import { koaGraphql } from '@meltwater/mlabs-graphql'
 
-const logTrue = async () => {
-  const trueValue = await isTrue(true)
-  console.log(trueValue)
-}
+import schema from './schema'
 
-logTrue().catch(err => { console.log(err) })
-// true
+const app = new Koa()
+const graphqlRouter = koaGraphql({schema})
+app.use(graphqlRouter.routes())
+app.use(graphqlRouter.allowedMethods())
+app.listen()
 ```
 
 ## Development Quickstart
