@@ -1,10 +1,8 @@
 # API Reference
 
-<!--- TODO: Update docs for added module(s). -->
-
 ## Top-Level Exports
 
-- [`isTrue(check)`](#istruecheck)
+- [`koaGraphql(options)`](#koagraphqloptions)
 
 ### Importing
 
@@ -12,32 +10,43 @@ Every function described above is a top-level export.
 You can import any of them like this:
 
 ```js
-import { isTrue } from '@meltwater/mlabs-graphql'
+import { koaGraphql } from '@meltwater/mlabs-graphql'
 ```
 
 ---
-### `isTrue(check)`
+### `koaGraphql(options)`
 
-Checks if its argument is true.
+[Koa router][koa-router] for [Apollo GraphQL server][apollo-server].
+
+Supports singleton or scoped schema.
+If `schema` is not provided, it will be resolved for each request with
+
+```
+ctx.state.container.resolve('schema')
+```
 
 #### Arguments
 
-1. `check` (*any*): The thing to check.
+1. `options` (*object*):
+  - `schema` (*object*): The GraphQL schema.
+    Default: resolve a schema scoped to each request (see above).
+  - `graphqlRoot` (*string*): Path to serve GraphQL endpoint.
+    Default: `/graphql`.
+  - `graphiqlRoot` (*string*): Path to serve GraphiQL endpoint.
+    If `null`, the endpoint will be unavailable.
+    Default: `/graphiql`.
 
 #### Returns
 
-(*boolean*): If `check` is `true`.
+(*object*): The [router][koa-router].
 
 #### Example
 
 ```js
-async () => {
-  const x = await isTrue(true)
-  x === true
-}
-
-async () => {
-  const y = await isTrue('')
-  y === false
-}
+graphqlRouter = koaGraphql()
+app.use(graphqlRouter.routes())
+app.use(graphqlRouter.allowedMethods())
 ```
+
+[apollo-server]: https://www.apollographql.com/docs/apollo-server/
+[koa-router]: https://github.com/alexmingoia/koa-router
