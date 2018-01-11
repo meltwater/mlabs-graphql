@@ -13,6 +13,17 @@ You can import any of them like this:
 import { koaGraphql } from '@meltwater/mlabs-graphql'
 ```
 
+Additionally, all modules from [GraphQL.js] and [GraphQL-tools] are reexported,
+and [graphql-tag] is reexported as the default export for this module, e.g.,
+
+```js
+import gql, { graphql, makeExecutableSchema } from '@meltwater/mlabs-graphql'
+```
+
+[GraphQL.js]: http://graphql.org/graphql-js/
+[GraphQL-tools]: https://www.apollographql.com/docs/graphql-tools/
+[graphql-tag]: https://github.com/apollographql/graphql-tag
+
 ---
 ### `koaGraphql(options)`
 

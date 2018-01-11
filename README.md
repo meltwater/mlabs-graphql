@@ -47,6 +47,39 @@ $ yarn add @meltwater/mlabs-graphql
 
 **See the complete [API documentation](./docs) and [working examples](./examples).**
 
+### GraphQL Modules
+
+#### graphql-tag
+
+Import [graphql-tag] by default with
+
+```js
+// import gql from 'graphql-tag' // instead of this use line below
+import gql from '@meltwater/mlabs-graphql'
+```
+
+#### GraphQL.js
+
+All [GraphQL.js] modules are reexported, e.g.,
+
+```js
+// import { graphql, buildSchema } from 'graphql' // instead of this use line below
+import { graphql, buildSchema } from '@meltwater/mlabs-graphql'
+```
+
+#### GraphQL-tools
+
+All [GraphQL-tools] modules are reexported, e.g.,
+
+```js
+// import { makeExecutableSchema } from 'graphql-tools' // instead of this use line below
+import { makeExecutableSchema } from '@meltwater/mlabs-graphql'
+```
+
+### Apollo Server
+
+#### Koa
+
 Create and run a GraphQL Koa server with
 
 ```js
