@@ -28,13 +28,13 @@ ctx.state.container.resolve('schema')
 #### Arguments
 
 1. `options` (*object*):
-  - `schema` (*object*): The GraphQL schema.
-    Default: resolve a schema scoped to each request (see above).
-  - `graphqlRoot` (*string*): Path to serve GraphQL endpoint.
-    Default: `/graphql`.
-  - `graphiqlRoot` (*string*): Path to serve GraphiQL endpoint.
-    If `null`, the endpoint will be unavailable.
-    Default: `/graphiql`.
+    - `schema` (*object*): The GraphQL schema.
+      Default: resolve a schema scoped to each request (see above).
+    - `graphqlRoot` (*string*): Path to serve GraphQL endpoint.
+      Default: `/graphql`.
+    - `graphiqlRoot` (*string*): Path to serve GraphiQL endpoint.
+      If `null`, the endpoint will be unavailable.
+      Default: `/graphiql`.
 
 #### Returns
 
