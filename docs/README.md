@@ -76,6 +76,7 @@ If a link or cache are not provided, they will be created.
       Default: an empty string.
     - `path` (*string*): The GraphQL endpoint on the server.
       Default: `/graphql`.
+    - `reqId` (*string*): Request id to send in header.
     - `cache` (*object): The [Apollo Cache] to use.
       Default: create a new [Apollo InMemoryCache].
     - `cacheOptions` (*object): Options passed directly to [Apollo InMemoryCache]
