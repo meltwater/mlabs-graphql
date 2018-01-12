@@ -1,7 +1,5 @@
 # Examples
 
-<!--- TODO: Update all uses of koa with added example. -->
-
 ## Running Examples Locally
 
 ### Local configuration
