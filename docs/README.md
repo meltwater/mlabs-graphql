@@ -63,6 +63,34 @@ app.use(graphqlRouter.allowedMethods())
 ```
 
 ---
+### `createClient(options)`
+
+Create a [GraphQL Client].
+If a link or cache are not provided, they will be created.
+
+#### Arguments
+
+1. `options` (*object*):
+   Any addtional options are passed directly to the [GraphQL Client].
+    - `origin` (*string*): The GraphQL server [URL origin].
+      Default: an empty string.
+    - `path` (*string*): The GraphQL endpoint on the server.
+      Default: `/graphql`.
+    - `cache` (*object): The [Apollo Cache] to use.
+      Default: create a new [Apollo InMemoryCache].
+    - `cacheOptions` (*object): Options passed directly to [Apollo InMemoryCache]
+      if `cache` is not provided.
+    - `link` (*object): The [Apollo Link] to use.
+      Default: create a new [Apollo HTTP Link].
+    - `linkOptions` (*object): Options passed directly to [Apollo HTTP Link]
+      if `link` is not provided.
+    - `apolloClientOptions` (*object): Options passed directly to [Apollo Client].
+
+#### Returns
+
+(*undefined*)
+
+---
 ### `registerClient(container, client)`
 
 Register a [GraphQL Client] and its dependencies in the Awilix container.
@@ -146,6 +174,7 @@ const client = container.resolve('fooClient')
 
 [Awilix]: https://github.com/jeffijoe/awilix
 [Apollo Client]: https://www.apollographql.com/docs/react/
+[Apollo Cache]: https://www.apollographql.com/docs/react/basics/caching.html
 [Apollo InMemoryCache]: https://www.apollographql.com/docs/react/basics/caching.html
 [Apollo HTTP Link]: https://www.apollographql.com/docs/link/links/http.html
 [Apollo Link]: https://www.apollographql.com/docs/link/
