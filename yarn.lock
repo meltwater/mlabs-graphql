@@ -52,9 +52,9 @@
     bunyan-formatter "^1.0.0"
     change-case "^3.0.1"
 
-"@meltwater/mlabs-graphql-client@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@meltwater/mlabs-graphql-client/-/mlabs-graphql-client-1.0.1.tgz#713f553eff6d13d489949427f9dae010ebeb2f7b"
+"@meltwater/mlabs-graphql-client@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@meltwater/mlabs-graphql-client/-/mlabs-graphql-client-1.1.0.tgz#8ba7e03fb531a0e862b4cc1dd9aa56061481f6cd"
   dependencies:
     "@meltwater/mlabs-logger" "^3.1.0"
     uuid "^3.1.0"

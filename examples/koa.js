@@ -7,7 +7,7 @@ import {
 
 import { koaGraphql } from '../lib'
 
-export default ({log}) => async (port = 8080) => {
+export default ({log}) => async (port = 9000) => {
   const schema = new GraphQLSchema({
     query: new GraphQLObjectType({
       name: 'RootQueryType',
