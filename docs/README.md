@@ -77,15 +77,15 @@ If a link or cache are not provided, they will be created.
     - `path` (*string*): The GraphQL endpoint on the server.
       Default: `/graphql`.
     - `reqId` (*string*): Request id to send in header.
-    - `cache` (*object): The [Apollo Cache] to use.
+    - `cache` (*object*): The [Apollo Cache] to use.
       Default: create a new [Apollo InMemoryCache].
-    - `cacheOptions` (*object): Options passed directly to [Apollo InMemoryCache]
+    - `cacheOptions` (*object*): Options passed directly to [Apollo InMemoryCache]
       if `cache` is not provided.
-    - `link` (*object): The [Apollo Link] to use.
+    - `link` (*object*): The [Apollo Link] to use.
       Default: create a new [Apollo HTTP Link].
-    - `linkOptions` (*object): Options passed directly to [Apollo HTTP Link]
+    - `linkOptions` (*object*): Options passed directly to [Apollo HTTP Link]
       if `link` is not provided.
-    - `apolloClientOptions` (*object): Options passed directly to [Apollo Client].
+    - `apolloClientOptions` (*object*): Options passed directly to [Apollo Client].
 
 #### Returns
 
