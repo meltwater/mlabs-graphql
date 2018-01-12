@@ -1190,10 +1190,10 @@ braces@^2.3.0:
     to-regex "^3.0.1"
 
 browserslist@^2.1.2:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.11.0.tgz#50350d6873a82ebe0f3ae5483658c571ae5f9d7d"
+  version "2.11.1"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.11.1.tgz#02fda29d9a2164b879100126e7b0d0b57e43a7bb"
   dependencies:
-    caniuse-lite "^1.0.30000784"
+    caniuse-lite "^1.0.30000789"
     electron-to-chromium "^1.3.30"
 
 buf-compare@^1.0.0:
@@ -1300,9 +1300,9 @@ camelcase@^4.0.0, camelcase@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
-caniuse-lite@^1.0.30000784:
-  version "1.0.30000789"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000789.tgz#2e3d937b267133f63635ef7f441fac66360fc889"
+caniuse-lite@^1.0.30000789:
+  version "1.0.30000790"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000790.tgz#c954cca780046f34c4b433d324ef419e1db51a53"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -1368,7 +1368,7 @@ change-case@^3.0.1:
     upper-case "^1.1.1"
     upper-case-first "^1.1.0"
 
-chokidar@^1.4.2, chokidar@^1.4.3, chokidar@^1.6.1, chokidar@^1.7.0:
+chokidar@^1.4.2, chokidar@^1.4.3, chokidar@^1.6.1:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.7.0.tgz#798e689778151c8076b4b360e5edd28cda2bb468"
   dependencies:
@@ -1409,13 +1409,12 @@ circular-json@^0.3.1:
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.3.tgz#815c99ea84f6809529d2f45791bdf82711352d66"
 
 class-utils@^0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/class-utils/-/class-utils-0.3.5.tgz#17e793103750f9627b2176ea34cfd1b565903c80"
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/class-utils/-/class-utils-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463"
   dependencies:
     arr-union "^3.1.0"
     define-property "^0.2.5"
     isobject "^3.0.0"
-    lazy-cache "^2.0.2"
     static-extend "^0.1.1"
 
 clean-stack@^1.1.1:
@@ -1574,8 +1573,8 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
     delayed-stream "~1.0.0"
 
 commander@^2.11.0, commander@^2.9.0:
-  version "2.12.2"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.12.2.tgz#0f5946c427ed9ec0d91a46bb9def53e54650e555"
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.13.0.tgz#6964bca67685df7c1f1430c584f07d7597885b9c"
 
 common-path-prefix@^1.0.0:
   version "1.0.0"
@@ -1948,8 +1947,8 @@ dot-prop@^4.1.0:
     is-obj "^1.0.0"
 
 dtrace-provider@~0.8:
-  version "0.8.5"
-  resolved "https://registry.yarnpkg.com/dtrace-provider/-/dtrace-provider-0.8.5.tgz#98ebba221afac46e1c39fd36858d8f9367524b92"
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/dtrace-provider/-/dtrace-provider-0.8.6.tgz#428a223afe03425d2cd6d6347fdf40c66903563d"
   dependencies:
     nan "^2.3.3"
 
@@ -2918,8 +2917,8 @@ graphql-tag@^2.6.1:
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.6.1.tgz#4788d509f6e29607d947fc47a40c4e18f736d34a"
 
 graphql-tools@^2.17.0:
-  version "2.17.0"
-  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-2.17.0.tgz#96c3cf54236a245b90e5adc4abdce81a2b37d1da"
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-2.18.0.tgz#8e2d6436f9adba1d579c1a1710ae95e7f5e7248b"
   dependencies:
     apollo-link "^1.0.0"
     apollo-utilities "^1.0.1"
@@ -4471,17 +4470,17 @@ node-pre-gyp@^0.6.39:
     tar-pack "^3.4.0"
 
 nodemon@^1.11.0:
-  version "1.14.10"
-  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.14.10.tgz#836d33ff0f89ad111b8d49e5e3b3cb872e36304e"
+  version "1.14.11"
+  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.14.11.tgz#cc0009dd8d82f126f3aba50ace7e753827a8cebc"
   dependencies:
-    chokidar "^1.7.0"
-    debug "^2.6.8"
+    chokidar "^2.0.0"
+    debug "^3.1.0"
     ignore-by-default "^1.0.1"
     minimatch "^3.0.4"
     pstree.remy "^1.1.0"
     semver "^5.4.1"
     touch "^3.1.0"
-    undefsafe "0.0.3"
+    undefsafe "^2.0.1"
     update-notifier "^2.3.0"
 
 "nomnom@>= 1.5.x":
@@ -6154,9 +6153,11 @@ unc-path-regex@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/unc-path-regex/-/unc-path-regex-0.1.2.tgz#e73dd3d7b0d7c5ed86fbac6b0ae7d8c6a69d50fa"
 
-undefsafe@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/undefsafe/-/undefsafe-0.0.3.tgz#ecca3a03e56b9af17385baac812ac83b994a962f"
+undefsafe@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/undefsafe/-/undefsafe-2.0.1.tgz#03b2f2a16c94556e14b2edef326cd66aaf82707a"
+  dependencies:
+    debug "^2.2.0"
 
 underscore@~1.6.0:
   version "1.6.0"
