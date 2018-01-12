@@ -91,6 +91,16 @@ If a link or cache are not provided, they will be created.
 
 (*undefined*)
 
+#### Example
+
+```js
+const client = createClient({
+  origin: 'https://example.com',
+  reqId: null,
+  log
+})
+```
+
 ---
 ### `registerClient(container, client)`
 
