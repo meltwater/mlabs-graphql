@@ -5,7 +5,7 @@
 - [`koaGraphql(options)`](#koagraphqloptions)
 - [`createClient(options)`](#createclientoptions)
 - [`registerClient(container, client)`](#registerclientcontainer-client)
-- [`registerClients(container, clients)`](#registerclientcontainer-clients)
+- [`registerClients(container, clients)`](#registerclientscontainer-clients)
 
 ### Importing
 
@@ -82,23 +82,23 @@ will register the following dependencies:
   Uses `gqlClientApolloClient`.
 
 Any of these dependencies may be overridden manually be registering
-a compatible
+a compatible dependency under the corresponding name.
 
 #### Arguments
 
 1. `container` (*object* **required**): The [Awilix] container.
 1. `client` (*object*):
-    - `name` (*string*): The (unique) GraphQL client name.
+    - `name` (*string*): The (unique) client name.
       The client will be registered as `${name}Client`.
       Default: `gql`.
     - `origin` (*string*): The GraphQL server [URL origin].
       Default: an empty string.
     - `path` (*string*): The GraphQL endpoint on the server.
       Default: `/graphql`.
-    - `cacheOptions`: Options passed directly to [Apollo InMemoryCache].
-    - `linkOptions`: Options passed directly to [Apollo HTTP Link].
-    - `apolloClientOptions`: Options passed directly to [Apollo Client].
-    - `clientOptions`: Options passed directly to [GraphQL Client].
+    - `cacheOptions` (*object*): Options passed directly to [Apollo InMemoryCache].
+    - `linkOptions` (*object*): Options passed directly to [Apollo HTTP Link].
+    - `apolloClientOptions` (*object*): Options passed directly to [Apollo Client].
+    - `clientOptions` (*object*): Options passed directly to [GraphQL Client].
 
 #### Returns
 
@@ -119,7 +119,7 @@ const client = container.resolve('fooClient')
 ### `registerClients(container, clients)`
 
 Register each [GraphQL Client] and its dependencies in the Awilix container
-using [`createClient`](#createclientoptions).
+using [`registerClient`](#registerclientcontainer-client).
 
 #### Arguments
 
@@ -128,7 +128,7 @@ using [`createClient`](#createclientoptions).
     The clients to register.
     Each key will be used as the client `name`
     and the value will be passed as the second argument to
-    [`createClient`](#createclientoptions).
+    [`registerClient`](#registerclientcontainer-client).
 
 #### Returns
 
