@@ -76,11 +76,66 @@ All [GraphQL-tools] modules are reexported, e.g.,
 import { makeExecutableSchema } from '@meltwater/mlabs-graphql'
 ```
 
-### Apollo Server
+### GraphQL Client
+
+#### Manual Instantiation
+
+Create a [GraphQL Client] and run a query with
+
+```js
+import createLogger from '@meltwater/mlabs-logger'
+import { createClient } from '@meltwater/mlabs-graphql'
+
+const client = createClient({
+  origin: 'https://example.com',
+  path: '/graphql',
+  log: createLogger()
+})
+
+const logQuery = async () => {
+  const { data } = await client.query(gql`{
+    __schema {
+      types {
+        name
+      }
+    }
+  }`)
+  console.log(data)
+}
+
+logQuery().catch(err => { console.log(err) })
+```
+
+#### Dependency Injection
+
+Register each [GraphQL Client] and its dependencies in an Awilix container
+
+```js
+import { createContainer, asValue } from 'awilix'
+import createLogger from '@meltwater/mlabs-logger'
+import { registerClients } from '@meltwater/mlabs-graphql'
+
+const container = createContainer()
+
+container.register({
+  log: asValue(createLogger()),
+  reqId: asValue(null)
+})
+
+registerClients(container, {
+  foo: {origin: 'https://example.com'},
+  bar: {origin: 'https://bar.example.com'}
+})
+
+const fooClient = container.resolve('fooClient')
+const barClient = container.resolve('barClient')
+```
+
+### GraphQL Server
 
 #### Koa
 
-Create and run a GraphQL Koa server with
+Create and run a Koa GraphQL [Apollo Server] with
 
 ```js
 import Koa from 'koa'

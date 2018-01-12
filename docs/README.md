@@ -71,12 +71,15 @@ If a link or cache are not provided, they will be created.
 #### Arguments
 
 1. `options` (*object*):
-   Any addtional options are passed directly to the [GraphQL Client].
+   Any additional options are passed directly to the [GraphQL Client].
     - `origin` (*string*): The GraphQL server [URL origin].
       Default: an empty string.
     - `path` (*string*): The GraphQL endpoint on the server.
       Default: `/graphql`.
     - `reqId` (*string*): Request id to send in header.
+      Default: none.
+    - `log` (*object*): A [Logger].
+      Default: none, but one will be created by the [GraphQL Client].
     - `cache` (*object*): The [Apollo Cache] to use.
       Default: create a new [Apollo InMemoryCache].
     - `cacheOptions` (*object*): Options passed directly to [Apollo InMemoryCache]
@@ -192,4 +195,5 @@ const client = container.resolve('fooClient')
 [GraphQL Client]: https://github.com/meltwater/mlabs-graphql-client
 [apollo-server]: https://www.apollographql.com/docs/apollo-server/
 [koa-router]: https://github.com/alexmingoia/koa-router
+[Logger]: https://fire-docs.meltwaterlabs.com/packages/logger/
 [URL origin]: https://url.spec.whatwg.org/#origin
