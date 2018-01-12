@@ -12,7 +12,7 @@ GraphQL client and server toolkit.
 The goal of this package is to consolidate core GraphQL modules in a single module
 to ensure version compatibility and maximize code reuse.
 
-- Register [GraphQL clients][mlabs-graphql-client]
+- Register [GraphQL clients][GraphQL Client].
   in the Awilix dependency tree with automatic creation of sub-dependencies.
 - Create a Koa router for the GraphQL [Apollo Server]
   with a static or request-scoped schema.
@@ -24,7 +24,7 @@ to ensure version compatibility and maximize code reuse.
 [GraphQL-tools]: https://www.apollographql.com/docs/graphql-tools/
 [graphql-tag]: https://github.com/apollographql/graphql-tag
 [Apollo Server]: https://www.apollographql.com/docs/apollo-server/
-[mlabs-graphql-client]: https://github.com/meltwater/mlabs-graphql-client
+[GraphQL Client]: https://github.com/meltwater/mlabs-graphql-client
 
 ## Installation
 
