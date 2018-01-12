@@ -196,4 +196,4 @@ const client = container.resolve('fooClient')
 [apollo-server]: https://www.apollographql.com/docs/apollo-server/
 [koa-router]: https://github.com/alexmingoia/koa-router
 [Logger]: https://fire-docs.meltwaterlabs.com/packages/logger/
-[URL origin]: https://url.spec.whatwg.org/#origin
+[URL origin]: https://nodejs.org/api/url.html#url_url_strings_and_url_objects
