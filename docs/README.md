@@ -176,6 +176,8 @@ using [`registerClient`](#registerclientcontainer-client).
     Each key will be used as the client `name`
     and the value will be passed as the second argument to
     [`registerClient`](#registerclientcontainer-client).
+3. `defaults` (*object*):
+   Options to apply to each client by default.
 
 #### Returns
 
@@ -185,7 +187,8 @@ using [`registerClient`](#registerclientcontainer-client).
 
 ```js
 registerClients(container, {
-  foo: {origin: 'https://example.com'}
+  foo: {origin: 'https://example.com'},
+  {token: 'auth-token'}
 })
 
 const client = container.resolve('fooClient')

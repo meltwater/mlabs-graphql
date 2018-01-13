@@ -39,10 +39,11 @@ export default ({log, graphqlOrigin, graphqlPath}) => async (q = defaultQuery) =
   registerClients(container, {
     example: {
       origin: graphqlOrigin,
-      path: graphqlPath,
+      path: graphqlPath
+    }}, {
       token: 'token'
     }
-  })
+  )
 
   const client = container.resolve('exampleClient')
   const { data } = await client.query({query})
