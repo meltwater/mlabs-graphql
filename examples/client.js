@@ -17,6 +17,8 @@ export const query = ({log, graphqlOrigin, graphqlPath}) => async (q = defaultQu
   const client = createClient({
     origin: graphqlOrigin,
     path: graphqlPath,
+    reqId: 'req-id',
+    token: 'token',
     log
   })
 
@@ -37,7 +39,8 @@ export default ({log, graphqlOrigin, graphqlPath}) => async (q = defaultQuery) =
   registerClients(container, {
     example: {
       origin: graphqlOrigin,
-      path: graphqlPath
+      path: graphqlPath,
+      token: 'token'
     }
   })
 

@@ -76,7 +76,9 @@ If a link or cache are not provided, they will be created.
       Default: an empty string.
     - `path` (*string*): The GraphQL endpoint on the server.
       Default: `/graphql`.
-    - `reqId` (*string*): Request id to send in header.
+    - `reqId` (*string*): Request id to send in the `x-request-id` header.
+      Default: none.
+    - `token` (*string*): Token to send in the `authorization` header.
       Default: none.
     - `log` (*object*): A [Logger].
       Default: none, but one will be created by the [GraphQL Client].
@@ -110,6 +112,7 @@ const client = createClient({
 Register a [GraphQL Client] and its dependencies in the Awilix container.
 
 The container must provide the dependencies `log` and `reqId`.
+The `reqId` will be sent in the `x-request-id` header.
 
 For example, registering a client named `gql`
 will register the following dependencies:
@@ -137,6 +140,8 @@ a compatible dependency under the corresponding name.
       Default: an empty string.
     - `path` (*string*): The GraphQL endpoint on the server.
       Default: `/graphql`.
+    - `token` (*string*): Token to send in the `authorization` header.
+      Default: none.
     - `cacheOptions` (*object*): Options passed directly to [Apollo InMemoryCache].
     - `linkOptions` (*object*): Options passed directly to [Apollo HTTP Link].
     - `apolloClientOptions` (*object*): Options passed directly to [Apollo Client].
