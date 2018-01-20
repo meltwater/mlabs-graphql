@@ -94,7 +94,7 @@
     "node": ">=8.9.0"
   },
   "dependencies": {
-    "@meltwater/mlabs-graphql-client": "^2.0.0",
+    "@meltwater/mlabs-graphql-client": "^2.2.0",
     "apollo-cache-inmemory": "^1.1.4",
     "apollo-client": "^2.0.4",
     "apollo-link": "^1.0.7",
