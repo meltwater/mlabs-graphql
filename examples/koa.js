@@ -26,7 +26,9 @@ export default ({log}) => async (port = 9000) => {
   const graphqlRouter = koaGraphql({schema})
   app.use(graphqlRouter.routes())
   app.use(graphqlRouter.allowedMethods())
-  app.listen(port, () => {
-    log.info(`Server: http://localhost:${port}/graphiql`)
+  return new Promise(() => {
+    app.listen(port, () => {
+      log.info(`Server: http://localhost:${port}/graphiql`)
+    })
   })
 }
