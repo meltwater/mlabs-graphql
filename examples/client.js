@@ -3,7 +3,7 @@ import gql from 'graphql-tag'
 
 import { createClient, registerClients } from '../lib'
 
-const defaultQuery = gql`{
+const defaultQuery = gql`query GetSchema{
   __schema {
     types {
       name
