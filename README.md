@@ -1,5 +1,7 @@
 # GraphQL
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/meltwater/mlabs-graphql.svg?token=bb1da58760d597a672d38ceda53caf7c1329b26e0ea78ce2ac71548e305f408d&ts=1517616290331)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/badge/npm-%40meltwater%2Fmlabs--graphql-blue.svg)](https://www.npmjs.com/package/@meltwater/mlabs-graphql)
 [![github](https://img.shields.io/badge/github-repo-blue.svg)](https://github.com/meltwater/mlabs-graphql)
 [![docs](https://img.shields.io/badge/docs-master-green.svg)](https://github.com/meltwater/mlabs-graphql/tree/master/docs)
