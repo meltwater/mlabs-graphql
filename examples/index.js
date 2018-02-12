@@ -15,6 +15,7 @@ const envVars = [
   'GRAPHQL_ORIGIN',
   'GRAPHQL_PATH',
   'LOG_LEVEL',
+  'LOG_FILTER',
   'LOG_OUTPUT_MODE'
 ]
 
