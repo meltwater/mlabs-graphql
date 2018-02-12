@@ -47,9 +47,12 @@ ctx.state.container.resolve('schema')
       Default: resolve a schema scoped to each request (see above).
     - `graphqlRoot` (*string*): Path to serve GraphQL endpoint.
       Default: `/graphql`.
-    - `graphiqlRoot` (*string*): Path to serve GraphiQL endpoint.
+    - `graphiqlRoot` (*string*): Path to serve [GraphiQL] endpoint.
       If `null`, the endpoint will be unavailable.
       Default: `/graphiql`.
+    - `voyagerRoot` (*string*): Path to serve [GraphQL Voyager] endpoint.
+      If `null`, the endpoint will be unavailable.
+      Default: `/voyager`.
 
 #### Returns
 
@@ -288,6 +291,8 @@ if (require.main === module) {
 [Apollo HTTP Link]: https://www.apollographql.com/docs/link/links/http.html
 [Apollo Link]: https://www.apollographql.com/docs/link/
 [GraphQL Client]: https://github.com/meltwater/mlabs-graphql-client
+[GraphQL Voyager]: https://github.com/APIs-guru/graphql-voyager
+[GraphiQL]: https://github.com/graphql/graphiql
 [apollo-server]: https://www.apollographql.com/docs/apollo-server/
 [koa-router]: https://github.com/alexmingoia/koa-router
 [Logger]: https://fire-docs.meltwaterlabs.com/packages/logger/
