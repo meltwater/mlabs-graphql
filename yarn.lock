@@ -77,6 +77,10 @@
     debug "^3.0.0"
     pino "^4.10.3"
 
+"@meltwater/phi@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@meltwater/phi/-/phi-1.2.0.tgz#3a10baf7ca35505340feca1451b46b8bd1672e0e"
+
 "@types/async@2.0.47":
   version "2.0.47"
   resolved "https://registry.yarnpkg.com/@types/async/-/async-2.0.47.tgz#f49ba1dd1f189486beb6e1d070a850f6ab4bd521"
@@ -5138,6 +5142,14 @@ quick-format-unescaped@^1.1.2:
   resolved "https://registry.yarnpkg.com/quick-format-unescaped/-/quick-format-unescaped-1.1.2.tgz#0ca581de3174becef25ac3c2e8956342381db698"
   dependencies:
     fast-safe-stringify "^1.0.8"
+
+ramda-adjunct@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/ramda-adjunct/-/ramda-adjunct-2.4.1.tgz#c86d552da227f7740bea6422f12d9e862c267ef8"
+
+ramda@^0.25.0:
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.25.0.tgz#8fdf68231cffa90bc2f9460390a0cb74a29b29a9"
 
 randomatic@^1.1.3:
   version "1.1.7"

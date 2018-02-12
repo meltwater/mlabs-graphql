@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.0.1] / 2018-01-19
 
+- Change default `fetchPolicy` to `no-cache`.
 - Update to [mlabs-graphql-client] to v2.2.1.
 - Update to [makenew-node-lib] v4.3.5.
 

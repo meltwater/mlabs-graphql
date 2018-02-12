@@ -68,6 +68,9 @@ app.use(graphqlRouter.allowedMethods())
 Create a [GraphQL Client].
 If a link or cache are not provided, they will be created.
 
+The Apollo Client `fetchPolicy` option is set to `no-cache` by default
+for each operation.
+
 #### Arguments
 
 1. `options` (*object*):
@@ -123,6 +126,7 @@ will register the following dependencies:
   Combines the HTTP Link and request id header forwarding.
 - `gqlClientApolloClient`: The [Apollo Client] (scoped).
   Uses `gqlClientCache` and `gqlClientLink`.
+  The `fetchPolicy` option is set to `no-cache` by default for each operation.
 - `gqlClient`: The [GraphQL Client] (scoped).
   Uses `gqlClientApolloClient`.
 
