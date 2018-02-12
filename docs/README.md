@@ -6,6 +6,7 @@
 - [`createClient(options)`](#createclientoptions)
 - [`registerClient(container, client)`](#registerclientcontainer-client)
 - [`registerClients(container, clients)`](#registerclientscontainer-clients)
+- [`examples`](#examples)
 
 ### Importing
 
@@ -198,6 +199,87 @@ registerClients(container, {
 const client = container.resolve('fooClient')
 ```
 
+---
+### `examples`
+
+Convenient `query` and `mutate` examples for projects using [examplr].
+
+- Each example receives the same options and takes the same arguments (see below).
+- The `query` (`mutation`) example looks
+  for a `queries` (`mutations`) directory under `dataRoot`.
+- The GraphQL query or mutation is loaded from a file matching `${name}.graphql`.
+  The corresponding variables are loaded from a file matching `${name}.${vars}.json`.
+- By default, to support queries without variables,
+  the special name `default` is used for `vars`,
+  in which case there is no error if the variables file is not found.
+
+#### Options
+
+- `dataRoot` (*string* **required**): Path containing
+  the `queries` and `mutations` directories.
+- `graphqlOrigin` (*string* **required**): The GraphQL server [URL origin].
+- `graphqlPath` (*string*): The GraphQL endpoint on the server.
+  Default: `/graphql`.
+- `graphqlVarTransforms` (*object*): Functions to transform the variables
+  loaded from the JSON file before making a request.
+  Looks for a transform function under `queries[name]` or `mutations[name]`.
+  Each function will receive the variables as an object and should return a new object.
+  Additionally, the `vars` name will be passed as the second argument.
+  Default: no transforms.
+- `graphqlClientOptions` (*object*): Additional options to pass to `createClient`.
+  Use `defaultOptions` inside this to directly affect the query or mutation.
+- `graphqldefaultNames` (*object*): Default names to use for queries and mutations.
+  Default: `{query: 'query', mutation: 'mutation'}`.
+- `log` (*object*): The Logger.
+
+#### Arguments
+
+1. `name` (*string*): The name of the query or mutation to load.
+2. `vars` (*string*): The name of variables to load.
+
+#### Returns
+
+(*object*): The `{data}` result from the query or mutation.
+
+#### Example
+
+Create `examples/mutations/foo.graphql`
+and `examples/mutations/foo.default.json`,
+then update an existing set of examplr examples, e.g.,
+
+```js
+/* examples/index.js */
+
+import createExamples from '@meltwater/examplr'
+
+import { examples } from '@meltwater/mlabs-graphql'
+
+const envVars = [
+  'GRAPHQL_ORIGIN',
+  'DATA_ROOT'
+]
+
+const defaultOptions = {
+  graphqlVarTransforms: {
+    mutations: {
+      bar: vars => ({...vars, date: Date.now()})
+    }
+  },
+  graphqlDefaultNames: {query: 'foo', 'mutation': 'bar'},
+  graphqlOrigin: 'http://localhost:9000',
+  dataRoot: __dirname
+}
+
+if (require.main === module) {
+  const { runExample } = createExamples({
+    examples,
+    envVars,
+    defaultOptions
+  })
+  runExample()
+}
+```
+
 [Awilix]: https://github.com/jeffijoe/awilix
 [Apollo Client]: https://www.apollographql.com/docs/react/
 [Apollo Cache]: https://www.apollographql.com/docs/react/basics/caching.html
@@ -209,3 +291,4 @@ const client = container.resolve('fooClient')
 [koa-router]: https://github.com/alexmingoia/koa-router
 [Logger]: https://fire-docs.meltwaterlabs.com/packages/logger/
 [URL origin]: https://nodejs.org/api/url.html#url_url_strings_and_url_objects
+[examplr]: https://github.com/meltwater/node-examplr
