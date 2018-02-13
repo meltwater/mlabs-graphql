@@ -224,7 +224,8 @@ Convenient `query` and `mutate` examples for projects using [examplr].
   loaded from the JSON file before making a request.
   Looks for a transform function under `queries[name]` or `mutations[name]`.
   Each function will receive the variables as an object and should return a new object.
-  Additionally, the `vars` name will be passed as the second argument.
+  Additionally, all arguments passed to the example will be passed to the transform
+  function as additional arguments beyond the first (`name`, `vars`, etc.).
   Default: no transforms.
 - `graphqlClientOptions` (*object*): Additional options to pass to `createClient`.
   Use `defaultOptions` inside this to directly affect the query or mutation.
