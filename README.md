@@ -224,11 +224,7 @@ The following environment variables must be set on [CircleCI]:
 
 These may be set manually or by running the script `./circleci/envvars.sh`.
 
-Greenkeeper requires a deployment key with write permission:
-see the [CircleCI documentation for adding one][CircleCI deployment key].
-
 [CircleCI]: https://circleci.com/
-[CircleCI deployment key]: https://circleci.com/docs/1.0/adding-read-write-deployment-key/
 
 ### Development tasks
 
@@ -286,7 +282,13 @@ is handled by [gulp].
 View available commands with
 
 ```
-$ yarn run gulp -- --tasks
+$ yarn run gulp --tasks
+```
+
+Run all linters with
+
+```
+$ yarn run lint
 ```
 
 In a separate window, use gulp to watch for changes
@@ -322,6 +324,12 @@ Watch and run tests on changes with
 $ yarn run watch:test
 ```
 
+If using [AVA snapshot testing], update snapshots with
+
+```
+$ yarn run test:update
+```
+
 Generate a coverage report with
 
 ```
@@ -336,16 +344,17 @@ Create a breakpoint by adding the statement `debugger` to the test
 and start a debug session with, e.g.,
 
 ```
-$ yarn run ava:inspect lib/true.spec.js
+$ yarn run test:inspect lib/client.spec.js
 ```
 
 Watch and restart the debugging session on changes with
 
 ```
-$ yarn run ava:inspect:watch lib/true.spec.js
+$ yarn run test:inspect:watch lib/client.spec.js
 ```
 
 [AVA]: https://github.com/avajs/ava
+[AVA snapshot testing]: https://github.com/avajs/ava#snapshot-testing
 [Codecov]: https://codecov.io/
 [Istanbul]: https://istanbul.js.org/
 
