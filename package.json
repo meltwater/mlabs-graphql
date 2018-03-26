@@ -107,7 +107,7 @@
     "graphql": "^0.13.0",
     "graphql-tag": "^2.6.1",
     "graphql-tools": "^2.17.0",
-    "graphql-voyager": "1.0.0-rc.10",
+    "graphql-voyager": "^1.0.0-rc.15",
     "isomorphic-fetch": "^2.2.1",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.3.0"
