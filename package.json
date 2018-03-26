@@ -97,7 +97,7 @@
   },
   "dependencies": {
     "@meltwater/mlabs-graphql-client": "^2.2.1",
-    "@meltwater/phi": "^1.2.0",
+    "@meltwater/phi": "^2.0.0",
     "apollo-cache-inmemory": "^1.1.4",
     "apollo-client": "^2.0.4",
     "apollo-link": "^1.0.7",
@@ -110,9 +110,7 @@
     "graphql-voyager": "1.0.0-rc.10",
     "isomorphic-fetch": "^2.2.1",
     "koa-bodyparser": "^4.2.0",
-    "koa-router": "^7.3.0",
-    "ramda": "^0.25.0",
-    "ramda-adjunct": "^2.4.1"
+    "koa-router": "^7.3.0"
   },
   "devDependencies": {
     "@meltwater/examplr": "^4.1.2",
