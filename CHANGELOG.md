@@ -29,8 +29,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Initial release.
 
+[GraphQL Voyager]: https://github.com/APIs-guru/graphql-voyager
 [makenew-node-lib]: https://github.com/meltwater/makenew-node-lib
 [mlabs-graphql-client]: https://github.com/meltwater/mlabs-graphql-client
 
-[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v1.0.1...HEAD
 [1.0.1]: https://github.com/meltwater/mlabs-graphql/compare/v1.0.0...v1.0.1
