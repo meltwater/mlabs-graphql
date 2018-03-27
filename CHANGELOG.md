@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [1.1.0] / 2018-03-27
 
 ### Added
 
@@ -15,8 +15,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 - Change default `fetchPolicy` to `no-cache`.
+- Update all Apollo and GraphQL dependencies.
 - Update to [mlabs-graphql-client] to v2.2.1.
-- Update to [makenew-node-lib] v4.3.5.
+- Update to [makenew-node-lib] v4.6.0.
 
 ## [1.0.1] / 2018-01-19
 
@@ -33,5 +34,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [makenew-node-lib]: https://github.com/meltwater/makenew-node-lib
 [mlabs-graphql-client]: https://github.com/meltwater/mlabs-graphql-client
 
-[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/meltwater/mlabs-graphql/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/meltwater/mlabs-graphql/compare/v1.0.0...v1.0.1
