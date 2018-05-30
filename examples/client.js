@@ -41,8 +41,8 @@ export default ({log, graphqlOrigin, graphqlPath}) => async (q = defaultQuery) =
       origin: graphqlOrigin,
       path: graphqlPath
     }}, {
-      token: 'token'
-    }
+    token: 'token'
+  }
   )
 
   const client = container.resolve('exampleClient')
