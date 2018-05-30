@@ -53,6 +53,9 @@ ctx.state.container.resolve('schema')
     - `voyagerRoot` (*string*): Path to serve [GraphQL Voyager] endpoint.
       If `null`, the endpoint will be unavailable.
       Default: `/voyager`.
+    - `playgroundRoot` (*string*): Path to serve [GraphQL Playground] endpoint.
+      If `null`, the endpoint will be unavailable.
+      Default: `/playground`.
 
 #### Returns
 
@@ -292,6 +295,7 @@ if (require.main === module) {
 [Apollo Link]: https://www.apollographql.com/docs/link/
 [GraphQL Client]: https://github.com/meltwater/mlabs-graphql-client
 [GraphQL Voyager]: https://github.com/APIs-guru/graphql-voyager
+[GraphQL Playground]: https://github.com/prismagraphql/graphql-playground
 [GraphiQL]: https://github.com/graphql/graphiql
 [apollo-server]: https://www.apollographql.com/docs/apollo-server/
 [koa-router]: https://github.com/alexmingoia/koa-router
