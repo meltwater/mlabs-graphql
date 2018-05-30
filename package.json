@@ -113,7 +113,7 @@
     "awilix": "^3.0.1",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.8.0",
-    "graphql-tools": "^2.23.1",
+    "graphql-tools": "^3.0.2",
     "graphql-voyager": "^1.0.0-rc.15",
     "isomorphic-fetch": "^2.2.1",
     "koa-bodyparser": "^4.2.0",
