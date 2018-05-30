@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.0] / 2018-05-30
+
+### Added
+
+- GraphQL playground endpoint.
+
+### Changed
+
+- (**Breaking**) Update graphql-tools to version 3.
+- Update to [makenew-node-lib] v4.7.1.
+
 ## [1.1.0] / 2018-03-27
 
 ### Added
@@ -34,6 +45,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [makenew-node-lib]: https://github.com/meltwater/makenew-node-lib
 [mlabs-graphql-client]: https://github.com/meltwater/mlabs-graphql-client
 
-[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/meltwater/mlabs-graphql/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/meltwater/mlabs-graphql/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/meltwater/mlabs-graphql/compare/v1.0.0...v1.0.1
