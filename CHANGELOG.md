@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.1] / 2018-07-12
+
+### Fixed
+
+- Missing `Bearer` string in authorization header.
+
 ## [2.0.0] / 2018-05-30
 
 ### Added
@@ -45,7 +51,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [makenew-node-lib]: https://github.com/meltwater/makenew-node-lib
 [mlabs-graphql-client]: https://github.com/meltwater/mlabs-graphql-client
 
-[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/meltwater/mlabs-graphql/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/meltwater/mlabs-graphql/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/meltwater/mlabs-graphql/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/meltwater/mlabs-graphql/compare/v1.0.0...v1.0.1
