@@ -118,7 +118,10 @@
     "graphql-voyager": "^1.0.0-rc.15",
     "isomorphic-fetch": "^2.2.1",
     "koa-bodyparser": "^4.2.0",
-    "koa-router": "^7.3.0"
+    "koa-router": "^7.3.0",
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0",
+    "react-transition-group": "^2.2.0"
   },
   "devDependencies": {
     "@meltwater/examplr": "^4.1.4",
