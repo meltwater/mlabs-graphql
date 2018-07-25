@@ -5,7 +5,7 @@
 - [`koaGraphql(options)`](#koagraphqloptions)
 - [`createClient(options)`](#createclientoptions)
 - [`registerClient(container, client)`](#registerclientcontainer-client)
-- [`registerClients(container, clients)`](#registerclientscontainer-clients)
+- [`registerClients(container, clients)`](#registerclientscontainer-clients-defaults)
 - [`examples`](#examples)
 
 ### Importing
@@ -174,7 +174,7 @@ const client = container.resolve('fooClient')
 ```
 
 ---
-### `registerClients(container, clients)`
+### `registerClients(container, clients, defaults)`
 
 Register each [GraphQL Client] and its dependencies in the Awilix container
 using [`registerClient`](#registerclientcontainer-client).
