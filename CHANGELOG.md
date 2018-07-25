@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.3] / 2018-07-25
+
+### Fixed
+
+- Set default GraphQL Playground option
+  `'request.credentials': 'same-origin'`
+  to meet expected behavior.
+
 ## [2.0.2] / 2018-07-16
 
 ### Fixed
@@ -57,7 +65,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [makenew-node-lib]: https://github.com/meltwater/makenew-node-lib
 [mlabs-graphql-client]: https://github.com/meltwater/mlabs-graphql-client
 
-[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v2.0.2...HEAD
+[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v2.0.3...HEAD
+[2.0.3]: https://github.com/meltwater/mlabs-graphql/compare/v2.0.2...v2.0.3
 [2.0.2]: https://github.com/meltwater/mlabs-graphql/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/meltwater/mlabs-graphql/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/meltwater/mlabs-graphql/compare/v1.1.0...v2.0.0
