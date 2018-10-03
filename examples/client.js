@@ -11,7 +11,7 @@ const defaultQuery = gql`query GetSchema{
   }
 }`
 
-export const query = ({log, graphqlOrigin, graphqlPath}) => async (q = defaultQuery) => {
+export const query = ({ log, graphqlOrigin, graphqlPath }) => async (q = defaultQuery) => {
   const query = typeof q === 'string' ? gql(q) : q
 
   const client = createClient({
@@ -22,11 +22,11 @@ export const query = ({log, graphqlOrigin, graphqlPath}) => async (q = defaultQu
     log
   })
 
-  const { data } = await client.query({query})
+  const { data } = await client.query({ query })
   return data
 }
 
-export default ({log, graphqlOrigin, graphqlPath}) => async (q = defaultQuery) => {
+export default ({ log, graphqlOrigin, graphqlPath }) => async (q = defaultQuery) => {
   const query = typeof q === 'string' ? gql(q) : q
 
   const container = createContainer()
@@ -40,12 +40,12 @@ export default ({log, graphqlOrigin, graphqlPath}) => async (q = defaultQuery) =
     example: {
       origin: graphqlOrigin,
       path: graphqlPath
-    }}, {
+    } }, {
     token: 'token'
   }
   )
 
   const client = container.resolve('exampleClient')
-  const { data } = await client.query({query})
+  const { data } = await client.query({ query })
   return data
 }
