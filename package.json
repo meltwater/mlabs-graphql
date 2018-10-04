@@ -103,7 +103,7 @@
     "apollo-client": "^2.2.8",
     "apollo-link": "^1.2.1",
     "apollo-link-http": "^1.5.3",
-    "apollo-server-koa": "^2.1.0",
+    "apollo-server-koa": "^1.4.0",
     "awilix": "^3.0.1",
     "graphql": "^14.0.2",
     "graphql-playground-middleware-koa": "^1.6.0",
