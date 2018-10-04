@@ -7,6 +7,7 @@
 - [`registerClient(container, client)`](#registerclientcontainer-client)
 - [`registerClients(container, clients)`](#registerclientscontainer-clients-defaults)
 - [`examples`](#examples)
+- [`GraphQLClient(options)`](#graphqlclientoptions)
 
 ### Importing
 
@@ -287,18 +288,124 @@ if (require.main === module) {
 }
 ```
 
+## GraphQLClient
+
+All methods are asynchronous (return a promise).
+
+### Constructor
+
+1. `options` (*object*):
+    - `apolloClient` (*object* **required**):
+      The [Apollo Client] instance to use for requests.
+    - `reqId` (*string*): A request id to bind to the instance.
+    - `reqIdHeader` (*string*): Name of the header to use for the request id.
+      Default: `x-request-id`.
+    - `reqNameHeader` (*string*): Name of the header to use for the request name.
+      Default: `x-request-name`.
+    - `log` (*object*): A [Logger].
+      Default: a new logger.
+
+### Example
+
+```js
+import ApolloClient from 'apollo-client'
+import { HttpLink } from 'apollo-link-http'
+import { InMemoryCache } from 'apollo-cache-inmemory'
+
+const apolloClient = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: new HttpLink({uri})
+})
+
+const client = createClient({apolloClient})
+```
+
+---
+### `health()`
+
+#### Returns
+
+(*boolean*): If the client is healthy.
+
+---
+### `query(query, options)`
+
+#### Arguments
+
+1. `query` (*string* **required**): The GraphQL query.
+2. `options` (*object*): Options to pass to the [Apollo Client] query method.
+
+Alternatively, if a single argument is provided as an object,
+it is passed directly to the [Apollo Client] query method.
+
+Additionally, if the query is given an [operation name]
+or `name` is given as an option (in either case above),
+log messages will include the name
+and the name will be sent in the request name header.
+
+### Example
+
+```js
+const query = gql`query Hello { hello }`
+
+// Each call will execute the same query and log 'Query Hello: Start'
+// and set the request name to 'Query Hello'.
+client.query(query)
+client.query(query, {name: 'Hello'})
+client.query({query})
+client.query({query, name: 'Hello'})
+```
+
+#### Returns
+
+(*object*): The response.
+
+---
+### `mutate(mutation, options)`
+
+#### Arguments
+
+1. `mutation` (*string* **required**): The GraphQL mutation.
+2. `options` (*object*): Options to pass to [ApolloC Client] mutate method.
+
+Alternatively, if a single argument is provided as an object,
+it is passed directly to the [Apollo Client] mutate method.
+
+Additionally, if the mutation is given an [operation name]
+or `name` is given as an option (in either case above),
+log messages will include the name
+and the name will be sent in the request name header.
+
+### Example
+
+```js
+const mutation = gql`{ mutation Greeting { setGreeting(name: "Hola") } }`
+
+// Each call will execute the same mutation and log 'Mutation Greeting: Start'
+// and set the request name to 'Mutation Greeting'.
+client.mutate(mutation)
+client.mutate(mutation, {name: 'Greeting'})
+client.mutate({mutation})
+client.mutate({mutation, name: 'Greeting'})
+```
+
+#### Returns
+
+(*object*): The response.
+
 [Awilix]: https://github.com/jeffijoe/awilix
 [Apollo Client]: https://www.apollographql.com/docs/react/
 [Apollo Cache]: https://www.apollographql.com/docs/react/basics/caching.html
 [Apollo InMemoryCache]: https://www.apollographql.com/docs/react/basics/caching.html
 [Apollo HTTP Link]: https://www.apollographql.com/docs/link/links/http.html
 [Apollo Link]: https://www.apollographql.com/docs/link/
-[GraphQL Client]: https://github.com/meltwater/mlabs-graphql-client
+[GraphQL Client]: #graphqlclientoptions
 [GraphQL Voyager]: https://github.com/APIs-guru/graphql-voyager
 [GraphQL Playground]: https://github.com/prismagraphql/graphql-playground
 [GraphiQL]: https://github.com/graphql/graphiql
 [apollo-server]: https://www.apollographql.com/docs/apollo-server/
 [koa-router]: https://github.com/alexmingoia/koa-router
-[Logger]: https://fire-docs.meltwaterlabs.com/packages/logger/
+[Logger]: https://github.com/meltwater/mlabs-logger
 [URL origin]: https://nodejs.org/api/url.html#url_url_strings_and_url_objects
 [examplr]: https://github.com/meltwater/node-examplr
+[operation name]: http://graphql.org/learn/queries/#operation-name
