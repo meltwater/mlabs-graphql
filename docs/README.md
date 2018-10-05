@@ -73,7 +73,7 @@ app.use(graphqlRouter.allowedMethods())
 ---
 ### `createClient(options)`
 
-Create a [GraphQL Client].
+Create a [GraphQLClient].
 If a link or cache are not provided, they will be created.
 
 The Apollo Client `fetchPolicy` option is set to `no-cache` by default
@@ -82,7 +82,7 @@ for each operation.
 #### Arguments
 
 1. `options` (*object*):
-   Any additional options are passed directly to the [GraphQL Client].
+   Any additional options are passed directly to the [GraphQLClient].
     - `origin` (*string*): The GraphQL server [URL origin].
       Default: an empty string.
     - `path` (*string*): The GraphQL endpoint on the server.
@@ -92,7 +92,7 @@ for each operation.
     - `token` (*string*): Token to send in the `authorization` header.
       Default: none.
     - `log` (*object*): A [Logger].
-      Default: none, but one will be created by the [GraphQL Client].
+      Default: none, but one will be created by the [GraphQLClient].
     - `cache` (*object*): The [Apollo Cache] to use.
       Default: create a new [Apollo InMemoryCache].
     - `cacheOptions` (*object*): Options passed directly to [Apollo InMemoryCache]
@@ -105,7 +105,7 @@ for each operation.
 
 #### Returns
 
-(*undefined*)
+(*GraphQLClient*)
 
 #### Example
 
@@ -120,7 +120,7 @@ const client = createClient({
 ---
 ### `registerClient(container, client)`
 
-Register a [GraphQL Client] and its dependencies in the Awilix container.
+Register a [GraphQLClient] and its dependencies in the Awilix container.
 
 The container must provide the dependencies `log` and `reqId`.
 The `reqId` will be sent in the `x-request-id` header.
@@ -135,7 +135,7 @@ will register the following dependencies:
 - `gqlClientApolloClient`: The [Apollo Client] (scoped).
   Uses `gqlClientCache` and `gqlClientLink`.
   The `fetchPolicy` option is set to `no-cache` by default for each operation.
-- `gqlClient`: The [GraphQL Client] (scoped).
+- `gqlClient`: The [GraphQLClient] (scoped).
   Uses `gqlClientApolloClient`.
 
 Any of these dependencies may be overridden manually be registering
@@ -157,7 +157,7 @@ a compatible dependency under the corresponding name.
     - `cacheOptions` (*object*): Options passed directly to [Apollo InMemoryCache].
     - `linkOptions` (*object*): Options passed directly to [Apollo HTTP Link].
     - `apolloClientOptions` (*object*): Options passed directly to [Apollo Client].
-    - `clientOptions` (*object*): Options passed directly to [GraphQL Client].
+    - `clientOptions` (*object*): Options passed directly to [GraphQLClient].
 
 #### Returns
 
@@ -177,7 +177,7 @@ const client = container.resolve('fooClient')
 ---
 ### `registerClients(container, clients, defaults)`
 
-Register each [GraphQL Client] and its dependencies in the Awilix container
+Register each [GraphQLClient] and its dependencies in the Awilix container
 using [`registerClient`](#registerclientcontainer-client).
 
 #### Arguments
@@ -399,7 +399,7 @@ client.mutate({mutation, name: 'Greeting'})
 [Apollo InMemoryCache]: https://www.apollographql.com/docs/react/basics/caching.html
 [Apollo HTTP Link]: https://www.apollographql.com/docs/link/links/http.html
 [Apollo Link]: https://www.apollographql.com/docs/link/
-[GraphQL Client]: #graphqlclientoptions
+[GraphQLClient]: #graphqlclient
 [GraphQL Voyager]: https://github.com/APIs-guru/graphql-voyager
 [GraphQL Playground]: https://github.com/prismagraphql/graphql-playground
 [GraphiQL]: https://github.com/graphql/graphiql
