@@ -297,7 +297,10 @@ All methods are asynchronous (return a promise).
 1. `options` (*object*):
     - `apolloClient` (*object* **required**):
       The [Apollo Client] instance to use for requests.
+    - `name` (*string*): The client name (for logging).
+      Default: graphql.
     - `reqId` (*string*): A request id to bind to the instance.
+      Default: one will be generated.
     - `reqIdHeader` (*string*): Name of the header to use for the request id.
       Default: `x-request-id`.
     - `reqNameHeader` (*string*): Name of the header to use for the request name.
