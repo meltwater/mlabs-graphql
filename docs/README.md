@@ -309,6 +309,9 @@ All methods are asynchronous (return a promise).
       If this level is active, then successful responses
       will be logged according to the other log response options.
       Default: debug.
+    - `willLogOptions` (*boolean*): If true, log additional options
+      passed to the client methods under `meta`.
+      Default: true.
     - `willLogResponseProps` (*boolean*): If true, log props returned
       by `getLogResponseProps`.
       Only relevant if `responseLogLevel` is an active level.
@@ -370,6 +373,7 @@ it is passed directly to the [Apollo Client] query method.
 - Pass the `logProps` option to log additional properties at the top-level.
 - The following options may be set per-request to override
   the defaults defined by the constructor:
+  `willLogOptions`,
   `willLogResponseProps`,
   `willLogResponseData`,
   `getLogResponseProps`,
@@ -412,6 +416,7 @@ it is passed directly to the [Apollo Client] mutate method.
 - Pass the `logProps` option to log additional properties at the top-level.
 - The following options may be set per-request to override
   the defaults defined by the constructor:
+  `willLogOptions`,
   `willLogResponseProps`,
   `willLogResponseData`,
   `getLogResponseProps`,
