@@ -305,6 +305,27 @@ All methods are asynchronous (return a promise).
       Default: `x-request-id`.
     - `reqNameHeader` (*string*): Name of the header to use for the request name.
       Default: `x-request-name`.
+    - `responseLogLevel` (*string*): Log level to log successful responses.
+      If this level is active, then successful responses
+      will be logged according to the other log response options.
+      Default: debug.
+    - `willLogResponseProps` (*boolean*): If true, log props returned
+      by `getLogResponseProps`.
+      Only relevant if `responseLogLevel` is an active level.
+      Default: true.
+    - `willLogResponseData` (*boolean*): If true, log `data` returned
+      by `getLogResponseData`.
+      Only relevant if `responseLogLevel` is an active level.
+      Default: true.
+    - `getLogResponseProps` (*function*): Receives the full response from ApolloClient
+      and returns an object whose properties will be logged at the top level.
+      Only relevant if `responseLogLevel` is an active level.
+      Default: no additional props are logged.
+    - `getLogResponseData` (*function*): Receives the full response from ApolloClient
+      and returns an object whose properties will be logged under `data`.
+      Only relevant if `responseLogLevel` is an active level
+      and `willLogResponseData` is set.
+      Default: logs the full ApolloClient response.
     - `log` (*object*): A [Logger].
       Default: a new logger.
 
@@ -341,10 +362,20 @@ const client = createClient({apolloClient})
 Alternatively, if a single argument is provided as an object,
 it is passed directly to the [Apollo Client] query method.
 
-Additionally, if the query is given an [operation name]
-or `name` is given as an option (in either case above),
-log messages will include the name
-and the name will be sent in the request name header.
+- If the query is given an [operation name]
+  or `name` is given as an option (in either case above),
+  log messages will include the name
+  and the name will be sent in the request name header.
+- Pass the `meta` option to log additional properties to the `meta` key.
+- Pass the `logProps` option to log additional properties at the top-level.
+- The following options may be set per-request to override
+  the defaults defined by the constructor:
+  `willLogOptions`,
+  `willLogResponseProps`,
+  `willLogResponseData`,
+  `getLogResponseProps`,
+  `getLogResponseData`
+  and `responseLogLevel`.
 
 ### Example
 
@@ -374,10 +405,20 @@ client.query({query, name: 'Hello'})
 Alternatively, if a single argument is provided as an object,
 it is passed directly to the [Apollo Client] mutate method.
 
-Additionally, if the mutation is given an [operation name]
-or `name` is given as an option (in either case above),
-log messages will include the name
-and the name will be sent in the request name header.
+- If the mutation is given an [operation name]
+  or `name` is given as an option (in either case above),
+  log messages will include the name
+  and the name will be sent in the request name header.
+- Pass the `meta` option to log additional properties to the `meta` key.
+- Pass the `logProps` option to log additional properties at the top-level.
+- The following options may be set per-request to override
+  the defaults defined by the constructor:
+  `willLogOptions`,
+  `willLogResponseProps`,
+  `willLogResponseData`,
+  `getLogResponseProps`,
+  `getLogResponseData`
+  and `responseLogLevel`.
 
 ### Example
 
