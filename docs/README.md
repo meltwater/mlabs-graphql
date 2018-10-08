@@ -370,7 +370,6 @@ it is passed directly to the [Apollo Client] query method.
 - Pass the `logProps` option to log additional properties at the top-level.
 - The following options may be set per-request to override
   the defaults defined by the constructor:
-  `willLogOptions`,
   `willLogResponseProps`,
   `willLogResponseData`,
   `getLogResponseProps`,
@@ -413,7 +412,6 @@ it is passed directly to the [Apollo Client] mutate method.
 - Pass the `logProps` option to log additional properties at the top-level.
 - The following options may be set per-request to override
   the defaults defined by the constructor:
-  `willLogOptions`,
   `willLogResponseProps`,
   `willLogResponseData`,
   `getLogResponseProps`,
