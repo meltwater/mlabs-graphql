@@ -299,6 +299,7 @@ All methods are asynchronous (return a promise).
       The [Apollo Client] instance to use for requests.
     - `name` (*string*): The client name (for logging).
       Default: graphql.
+    - `retry` (*object*): Options to pass directly to [async-retry].
     - `reqId` (*string*): A request id to bind to the instance.
       Default: one will be generated.
     - `reqIdHeader` (*string*): Name of the header to use for the request id.
@@ -365,6 +366,7 @@ const client = createClient({apolloClient})
 Alternatively, if a single argument is provided as an object,
 it is passed directly to the [Apollo Client] query method.
 
+- Failing requests will be retried on certain errors.
 - If the query is given an [operation name]
   or `name` is given as an option (in either case above),
   log messages will include the name
@@ -373,6 +375,7 @@ it is passed directly to the [Apollo Client] query method.
 - Pass the `logProps` option to log additional properties at the top-level.
 - The following options may be set per-request to override
   the defaults defined by the constructor:
+  `retry`,
   `willLogOptions`,
   `willLogResponseProps`,
   `willLogResponseData`,
@@ -403,11 +406,12 @@ client.query({query, name: 'Hello'})
 #### Arguments
 
 1. `mutation` (*string* **required**): The GraphQL mutation.
-2. `options` (*object*): Options to pass to [ApolloC Client] mutate method.
+2. `options` (*object*): Options to pass to [Apollo Client] mutate method.
 
 Alternatively, if a single argument is provided as an object,
 it is passed directly to the [Apollo Client] mutate method.
 
+- Failing requests will be retried on certain errors.
 - If the mutation is given an [operation name]
   or `name` is given as an option (in either case above),
   log messages will include the name
@@ -416,6 +420,7 @@ it is passed directly to the [Apollo Client] mutate method.
 - Pass the `logProps` option to log additional properties at the top-level.
 - The following options may be set per-request to override
   the defaults defined by the constructor:
+  `retry`,
   `willLogOptions`,
   `willLogResponseProps`,
   `willLogResponseData`,
@@ -446,6 +451,7 @@ client.mutate({mutation, name: 'Greeting'})
 [Apollo InMemoryCache]: https://www.apollographql.com/docs/react/basics/caching.html
 [Apollo HTTP Link]: https://www.apollographql.com/docs/link/links/http.html
 [Apollo Link]: https://www.apollographql.com/docs/link/
+[async-retry]: https://github.com/zeit/async-retry#readme
 [GraphQLClient]: #graphqlclient
 [GraphQL Voyager]: https://github.com/APIs-guru/graphql-voyager
 [GraphQL Playground]: https://github.com/prismagraphql/graphql-playground
