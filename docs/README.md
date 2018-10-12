@@ -299,7 +299,7 @@ All methods are asynchronous (return a promise).
       The [Apollo Client] instance to use for requests.
     - `name` (*string*): The client name (for logging).
       Default: graphql.
-    - `retry` (*object*): Options to pass directly to [async-retry].
+    - `retry` (*object* or *number*): Options to pass directly to [async-retry].
     - `reqId` (*string*): A request id to bind to the instance.
       Default: one will be generated.
     - `reqIdHeader` (*string*): Name of the header to use for the request id.
