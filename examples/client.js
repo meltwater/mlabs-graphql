@@ -42,6 +42,7 @@ export const metrics = ({ log, graphqlOrigin, graphqlPath }) => async (q = defau
   const query = typeof q === 'string' ? gql(q) : q
 
   const client = createClient({
+    retry: 0,
     origin: graphqlOrigin,
     path: graphqlPath,
     metrics: register,
