@@ -2,10 +2,11 @@ import path from 'path'
 
 import createExamples from '@meltwater/examplr'
 
-import client, { query } from './client'
+import client, { metrics, query } from './client'
 import koa from './koa'
 
 export const examples = {
+  metrics,
   client,
   query,
   koa

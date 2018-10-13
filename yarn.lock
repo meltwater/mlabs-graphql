@@ -3626,7 +3626,7 @@ got@^6.7.1:
     unzip-response "^2.0.1"
     url-parse-lax "^1.0.0"
 
-"got@github:sindresorhus/got":
+got@sindresorhus/got:
   version "9.2.2"
   resolved "https://codeload.github.com/sindresorhus/got/tar.gz/8d2e91171509bc2aec71c4483978cfd421ebcf1d"
   dependencies:
