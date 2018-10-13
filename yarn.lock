@@ -860,10 +860,10 @@
     pino "^5.4.1"
     pino-pretty "^2.1.0"
 
-"@meltwater/mlabs-http@^0.7.0-beta.0":
-  version "0.7.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@meltwater/mlabs-http/-/mlabs-http-0.7.0-beta.0.tgz#2480e58dfcc12c7ac4a80125f9fce7c7b7b20b06"
-  integrity sha512-R3bGQo/2TmSixGVbjX8ae/vNXoShJ1WYywFXtyQujGcSH7L18UEp4jWro+H5VM3XBIxitbuHgmYDqZm1dIUsdA==
+"@meltwater/mlabs-http@^0.7.0-beta.1":
+  version "0.7.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@meltwater/mlabs-http/-/mlabs-http-0.7.0-beta.1.tgz#d6f07d7c1f804321ef4ce8e347c6a399dbf15186"
+  integrity sha512-X1ndTPyebEoWP3S0n8fzzqMpVXWK4xACV1GIHtGL0e0tGEp5IS+TQCnCdGqoZtezv2I/V/zAMoDZc1yQW+zPRQ==
   dependencies:
     "@meltwater/mlabs-logger" "^5.1.1"
     got sindresorhus/got
@@ -3626,7 +3626,7 @@ got@^6.7.1:
     unzip-response "^2.0.1"
     url-parse-lax "^1.0.0"
 
-got@sindresorhus/got:
+"got@github:sindresorhus/got":
   version "9.2.2"
   resolved "https://codeload.github.com/sindresorhus/got/tar.gz/8d2e91171509bc2aec71c4483978cfd421ebcf1d"
   dependencies:
