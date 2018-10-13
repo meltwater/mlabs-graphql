@@ -860,10 +860,10 @@
     pino "^5.4.1"
     pino-pretty "^2.1.0"
 
-"@meltwater/mlabs-http@^0.6.1":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@meltwater/mlabs-http/-/mlabs-http-0.6.1.tgz#03c660280f0ba3e0e5cf286882bae2a64b85cce5"
-  integrity sha512-R+5Jro57vTbtqcWOadLYtEhh6MfTEjk46/F5qqqBUvqxqxAAV20s5k4Zu5nLflMolAscuD6P+qymvGTw1jKz6w==
+"@meltwater/mlabs-http@^0.7.0-beta.0":
+  version "0.7.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@meltwater/mlabs-http/-/mlabs-http-0.7.0-beta.0.tgz#2480e58dfcc12c7ac4a80125f9fce7c7b7b20b06"
+  integrity sha512-R3bGQo/2TmSixGVbjX8ae/vNXoShJ1WYywFXtyQujGcSH7L18UEp4jWro+H5VM3XBIxitbuHgmYDqZm1dIUsdA==
   dependencies:
     "@meltwater/mlabs-logger" "^5.1.1"
     got sindresorhus/got
