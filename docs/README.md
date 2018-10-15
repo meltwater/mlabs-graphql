@@ -6,7 +6,7 @@
 - [`createClient(options)`](#createclientoptions)
 - [`registerClient(container, client)`](#registerclientcontainer-client)
 - [`registerClients(container, clients)`](#registerclientscontainer-clients-defaults)
-- [`registerClientMetrics(options)`](#registerclientmetricsoptions)
+- [`collectClientMetrics(options)`](#collectclientmetricsoptions)
 - [`examples`](#examples)
 - [`GraphQLClient(options)`](#graphqlclientoptions)
 
@@ -290,7 +290,7 @@ if (require.main === module) {
 ```
 
 ---
-### `registerClientMetrics(options)`
+### `collectClientMetrics(options)`
 
 Collect metrics with [Prometheus client].
 
@@ -319,7 +319,7 @@ The list of (un-prefixed) metric names is exported as `metricNames`.
 ```js
 const register = new Registry()
 
-registerClientMetrics({
+collectClientMetrics({
   register,
   prefix: 'my_prefix_',
   options: {

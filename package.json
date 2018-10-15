@@ -97,7 +97,7 @@
     "node": ">=8.9.0"
   },
   "dependencies": {
-    "@meltwater/mlabs-http": "^0.8.2",
+    "@meltwater/mlabs-http": "^0.11.0",
     "@meltwater/mlabs-logger": "^5.1.1",
     "@meltwater/phi": "^2.0.0",
     "apollo-cache-inmemory": "^1.1.12",

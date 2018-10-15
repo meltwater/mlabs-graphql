@@ -3,7 +3,7 @@ import { Registry } from 'prom-client'
 import { createContainer, asValue } from 'awilix'
 import gql from 'graphql-tag'
 
-import { createClient, registerClients, registerClientMetrics } from '../lib'
+import { createClient, registerClients, collectClientMetrics } from '../lib'
 
 const defaultQuery = gql`query GetSchema{
   __schema {
@@ -30,7 +30,7 @@ export const query = ({ log, graphqlOrigin, graphqlPath }) => async (q = default
 
 export const metrics = ({ log, graphqlOrigin, graphqlPath }) => async (q = defaultQuery) => {
   const register = new Registry()
-  registerClientMetrics({
+  collectClientMetrics({
     register,
     options: {
       'request_duration_milliseconds': {
