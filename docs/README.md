@@ -6,6 +6,7 @@
 - [`createClient(options)`](#createclientoptions)
 - [`registerClient(container, client)`](#registerclientcontainer-client)
 - [`registerClients(container, clients)`](#registerclientscontainer-clients-defaults)
+- [`registerMetrics(options)`](#registermetricsoptions)
 - [`examples`](#examples)
 - [`GraphQLClient(options)`](#graphqlclientoptions)
 
@@ -288,6 +289,52 @@ if (require.main === module) {
 }
 ```
 
+---
+### `registerMetrics(options)`
+
+Collect metrics with [Prometheus client].
+
+Call this function once with a [Prometheus Registry] instance
+and pass the same Registry instance to each GraphQLClient that should
+send metrics to this Registry.
+
+The list of (un-prefixed) metric names is exported as `metricNames`.
+
+#### Arguments
+
+1. `options` (*object*):
+    - `register` (*object* **required**):
+      [Prometheus registry] to use for metrics.
+    - `prefix` (*string*): Prefix to prepend to all metric names.
+      Default: `graphql_client_`.
+    - `metricOptions` (*object*): Override options for each metric.
+      Default: no overrides.
+
+#### Returns
+
+(*undefined*)
+
+#### Examples
+
+```js
+const register = new Registry()
+
+registerMetrics({
+  register,
+  prefix: 'my_prefix_',
+  options: {
+    'request_duration_milliseconds': {
+      buckets: [0, 200, 300, 800]
+    }
+  }
+})
+
+const client = createClient({ metrics: register })
+await client.query(...)
+
+register.metrics()
+```
+
 ## GraphQLClient
 
 All methods are asynchronous (return a promise).
@@ -462,3 +509,5 @@ client.mutate({mutation, name: 'Greeting'})
 [URL origin]: https://nodejs.org/api/url.html#url_url_strings_and_url_objects
 [examplr]: https://github.com/meltwater/node-examplr
 [operation name]: http://graphql.org/learn/queries/#operation-name
+[Prometheus Registry]: https://github.com/siimon/prom-client#multiple-registries
+[Prometheus client]: https://github.com/siimon/prom-client
