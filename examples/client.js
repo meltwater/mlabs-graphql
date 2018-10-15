@@ -1,5 +1,4 @@
 import { Registry } from 'prom-client'
-
 import { createContainer, asValue } from 'awilix'
 import gql from 'graphql-tag'
 
@@ -71,6 +70,7 @@ export default ({ log, graphqlOrigin, graphqlPath }) => async (q = defaultQuery)
   const container = createContainer()
 
   container.register({
+    registry: new Registry(),
     log: asValue(log),
     reqId: asValue('req-id')
   })

@@ -123,8 +123,9 @@ const client = createClient({
 
 Register a [GraphQLClient] and its dependencies in the Awilix container.
 
-The container must provide the dependencies `log` and `reqId`.
+The container must provide the dependencies `registry`, `log` and `reqId`.
 The `reqId` will be sent in the `x-request-id` header.
+The `registry` is passed as `metrics` to the GraphQLClient.
 
 For example, registering a client named `gql`
 will register the following dependencies:
