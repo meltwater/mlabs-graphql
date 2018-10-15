@@ -106,7 +106,7 @@
     "apollo-link-http": "^1.5.3",
     "apollo-server-koa": "^1.4.0",
     "async-retry": "^1.2.3",
-    "awilix": "^3.0.1",
+    "awilix": "^4.0.0",
     "graphql": "^14.0.2",
     "graphql-playground-middleware-koa": "^1.6.0",
     "graphql-tag": "^2.8.0",
