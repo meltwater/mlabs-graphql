@@ -31,7 +31,7 @@ export const metrics = ({ log, graphqlOrigin, graphqlPath }) => async (q = defau
   const register = new Registry()
   collectClientMetrics({
     register,
-    options: {
+    metricOptions: {
       'request_duration_milliseconds': {
         buckets: [0, 200, 300, 800]
       }

@@ -17,7 +17,7 @@ test.beforeEach(t => {
 
   collectClientMetrics({
     register,
-    options: {
+    metricOptions: {
       'request_duration_milliseconds': {
         buckets: [0, 10000]
       }
@@ -66,9 +66,9 @@ test('get', async t => {
   // Remove metric line that depends on millisecond timing
   const m = metrics.split('\n')
   const snapshot = [
-    ...m.slice(0, 31),
-    ...m.slice(32, 44),
-    ...m.slice(45)
+    ...m.slice(0, 23),
+    ...m.slice(24, 28),
+    ...m.slice(29)
   ].join('\n')
 
   t.snapshot(snapshot)
