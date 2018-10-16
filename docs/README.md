@@ -125,7 +125,7 @@ Register a [GraphQLClient] and its dependencies in the Awilix container.
 
 The container must provide the dependencies `registry`, `log` and `reqId`.
 The `reqId` will be sent in the `x-request-id` header.
-The `registry` is passed as `metrics` to the GraphQLClient.
+The `registry` is passed as `metricRegistry` to the GraphQLClient.
 
 For example, registering a client named `gql`
 will register the following dependencies:
@@ -330,7 +330,7 @@ collectClientMetrics({
   }
 })
 
-const client = createClient({ metrics: register })
+const client = createClient({ metricRegistry: register })
 await client.query(...)
 
 register.metrics()
@@ -348,6 +348,10 @@ All methods are asynchronous (return a promise).
     - `name` (*string*): The client name (for logging).
       Default: graphql.
     - `retry` (*object* or *number*): Options to pass directly to [async-retry].
+    - `metricRegistry` (*object*): [Prometheus Registry] to collect metrics.
+      Default: `null` (metrics disabled).
+    - `metricPrefix` (*object*): Prefix prepend to all metric names.
+      Default: See [`collectClientMetrics`](#collectclientmetricsoptions).
     - `reqId` (*string*): A request id to bind to the instance.
       Default: one will be generated.
     - `reqIdHeader` (*string*): Name of the header to use for the request id.

@@ -30,7 +30,7 @@ test.beforeEach(t => {
   const client = (t, options = {}) => createClient({
     origin: api,
     retry: { retries: 0 },
-    metrics: register,
+    metricRegistry: register,
     log: createLogger({ t }),
     ...options
   })

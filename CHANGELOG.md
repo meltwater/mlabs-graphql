@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - (**Breaking**) Clients registered with `registerClient` or `registerClients`
   now require a `registry` dependency.
 - Automatic retries with `retry` option.
-- Client metrics with `collectClientMetrics` and `metrics` option.
+- Client metrics with `collectClientMetrics` and `metricPrefix`, and `metricRegistry` options.
 - Client logging options:
   - `logProps`
   - `willLogOptions`

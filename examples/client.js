@@ -44,7 +44,7 @@ export const metrics = ({ log, graphqlOrigin, graphqlPath }) => async (q = defau
     retry: 0,
     origin: graphqlOrigin,
     path: graphqlPath,
-    metrics: register,
+    metricRegistry: register,
     log
   })
 
