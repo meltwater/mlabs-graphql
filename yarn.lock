@@ -770,10 +770,10 @@
     pino "^5.4.1"
     pino-pretty "^2.1.0"
 
-"@meltwater/mlabs-http@^0.11.1":
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/@meltwater/mlabs-http/-/mlabs-http-0.11.1.tgz#974b6f2fb32f0d2e032731116e89a21e162f1e24"
-  integrity sha512-vJYsrMLKxc+PdEA/UJ3C2ZxB/UaS01ZFj8O7pooFfKZFqGBC1LOGaPcUShmJ2yAORGQKPz5EJgoBWAmepoNzMQ==
+"@meltwater/mlabs-http@^1.0.0-rc.0":
+  version "1.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@meltwater/mlabs-http/-/mlabs-http-1.0.0-rc.0.tgz#03cd6ef056731f42a28fd4440a03778156f96584"
+  integrity sha512-49I6ib4FcH4OwBcw4+1+6BvP+4KBL6+6GeD+0QmzmdPW/Q4vqIgsH9fQCshnwxWrFtpkfskoxXpcCi2NSWzDNg==
   dependencies:
     "@meltwater/mlabs-logger" "^5.1.1"
     awilix "^4.0.0"
@@ -3591,19 +3591,19 @@ graphql-import@^0.4.0:
   dependencies:
     lodash "^4.17.4"
 
-graphql-playground-html@1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/graphql-playground-html/-/graphql-playground-html-1.6.0.tgz#6ec4d54325ab2e5352506fdb89eb37c3fc718bf8"
-  integrity sha512-et3huQFEuAZgAiUfs9a+1Wo/JDX94k7XqNRc8LhpGT8k2NwIhMAbZKqudVF/Ww4+XDoEB4LUTSFGRPBYvKrcKQ==
+graphql-playground-html@1.6.3:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/graphql-playground-html/-/graphql-playground-html-1.6.3.tgz#4fb0db36016241f5355e4afe125f8c2f1dab7f50"
+  integrity sha512-oT2bSRAxJluZxRRYAIqzlhv3A521W7eLtRiM/YVMGnRmtkbphDD3lp1F7eFFekqlgqS/KCE5GUFNl5HyoQvBNg==
   dependencies:
     graphql-config "2.0.0"
 
-graphql-playground-middleware-koa@^1.6.0:
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/graphql-playground-middleware-koa/-/graphql-playground-middleware-koa-1.6.4.tgz#7a54a77d6563e643ef1f3a37c9f9496f84842514"
-  integrity sha512-uXkoRVklzxMo1qU+06GgFq5uqFkS0DDAZ4k517aq0GAl25xe0Y9OR+usdsFRAi7jr0wHDrI2++6CNWY4u/v/vA==
+graphql-playground-middleware-koa@^1.6.6:
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/graphql-playground-middleware-koa/-/graphql-playground-middleware-koa-1.6.6.tgz#9e4710b9a48020bbcd6d9c38bd3d4368422659d9"
+  integrity sha512-hJCvjl+hrf8fRsan+Ot5oUoht1YCj2sM3Cvs4b3hkNyAXhN1zEAw5xEvL8NAbyNKGugPuJOrOJmy1p9eeEk1Fg==
   dependencies:
-    graphql-playground-html "1.6.0"
+    graphql-playground-html "1.6.3"
 
 graphql-request@^1.4.0:
   version "1.8.2"

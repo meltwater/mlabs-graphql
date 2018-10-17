@@ -97,7 +97,7 @@
     "node": ">=8.9.0"
   },
   "dependencies": {
-    "@meltwater/mlabs-http": "^0.11.1",
+    "@meltwater/mlabs-http": "^1.0.0-rc.0",
     "@meltwater/mlabs-logger": "^5.1.1",
     "@meltwater/phi": "^2.0.0",
     "apollo-cache-inmemory": "^1.1.12",
@@ -108,7 +108,7 @@
     "async-retry": "^1.2.3",
     "awilix": "^4.0.0",
     "graphql": "^14.0.2",
-    "graphql-playground-middleware-koa": "^1.6.0",
+    "graphql-playground-middleware-koa": "^1.6.6",
     "graphql-tag": "^2.8.0",
     "graphql-tools": "^4.0.0",
     "graphql-voyager": "^1.0.0-rc.15",
