@@ -352,6 +352,8 @@ All methods are asynchronous (return a promise).
       Default: `null` (metrics disabled).
     - `metricPrefix` (*object*): Prefix prepend to all metric names.
       Default: See [`collectClientMetrics`](#collectclientmetricsoptions).
+    - `healthQuery`: Query used for health check.
+      Default: standard type query.
     - `reqId` (*string*): A request id to bind to the instance.
       Default: one will be generated.
     - `reqIdHeader` (*string*): Name of the header to use for the request id.
