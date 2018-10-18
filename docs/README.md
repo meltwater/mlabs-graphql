@@ -8,7 +8,7 @@
 - [`registerClients(container, clients)`](#registerclientscontainer-clients-defaults)
 - [`collectClientMetrics(options)`](#collectclientmetricsoptions)
 - [`examples`](#examples)
-- [`GraphQLClient(options)`](#graphqlclientoptions)
+- [`GraphQLClient`](#graphqlclient)
 
 ### Importing
 
