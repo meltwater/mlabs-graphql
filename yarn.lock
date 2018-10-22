@@ -770,10 +770,10 @@
     pino "^5.4.1"
     pino-pretty "^2.1.0"
 
-"@meltwater/mlabs-http@^1.0.0-rc.1":
-  version "1.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@meltwater/mlabs-http/-/mlabs-http-1.0.0-rc.3.tgz#fd9fb98704a313763db6e0f20ab3e2dfd65e97bd"
-  integrity sha512-kave5j6+QE5fRbLGrkOu6Q7VvSdccvuxRHL871uzA5+04ThYFSIAVBS2YSgeO8mjsFFYh9R5MNz+4MIr+iKxBA==
+"@meltwater/mlabs-http@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@meltwater/mlabs-http/-/mlabs-http-1.0.0.tgz#bf23d403d0ed3feeaa09c099ea471d9e21b12070"
+  integrity sha512-9ei+0V13y7IBQYs/VWNcMe2tE1H0YrEVkKu4PmNilsPXXL7w6TlLiGt5S4Rj2zeFDs/12TsX705qL3CgJZZeKg==
   dependencies:
     "@meltwater/mlabs-logger" "^5.1.1"
     awilix "^4.0.0"
