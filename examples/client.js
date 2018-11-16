@@ -70,7 +70,7 @@ export default ({ log, graphqlOrigin, graphqlPath }) => async (q = defaultQuery)
   const container = createContainer()
 
   container.register({
-    registry: new Registry(),
+    registry: asValue(null),
     log: asValue(log),
     reqId: asValue('req-id')
   })
