@@ -45,6 +45,7 @@ ctx.state.container.resolve('schema')
 #### Arguments
 
 1. `options` (*object*):
+   Any additional options are passed directly to [Koa Apollo Server][apollo-server].
     - `schema` (*object*): The GraphQL schema.
       Default: resolve a schema scoped to each request (see above).
     - `graphqlRoot` (*string*): Path to serve GraphQL endpoint.
