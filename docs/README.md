@@ -147,7 +147,7 @@ a compatible dependency under the corresponding name.
 #### Arguments
 
 1. `container` (*object* **required**): The [Awilix] container.
-1. `client` (*object*):
+2. `client` (*object*):
     - `name` (*string*): The (unique) client name.
       The client will be registered as `${name}Client`.
       Default: `gql`.
