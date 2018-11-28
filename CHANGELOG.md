@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+[Unreleased]
+
+### Changed
+
+- (**Breaking**) Rename `schema` dependency to `gqlSchema`.
+
+### Added
+
+- `registerServer` function.
+- Log errors on server.
+- Pass additional options of `koaGraphql` to `graphqlKoa`.
+
 ## [4.0.0] / 2018-10-20
 
 ### Added
