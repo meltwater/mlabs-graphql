@@ -6,6 +6,7 @@
 - [`createClient(options)`](#createclientoptions)
 - [`registerClient(container, client)`](#registerclientcontainer-client)
 - [`registerClients(container, clients)`](#registerclientscontainer-clients-defaults)
+- [`registerServer(container, models)`](#registerservercontainer-models)
 - [`collectClientMetrics(options)`](#collectclientmetricsoptions)
 - [`examples`](#examples)
 - [`GraphQLClient`](#graphqlclient)
@@ -198,15 +199,94 @@ using [`registerClient`](#registerclientcontainer-client).
 
 (*undefined*)
 
+---
+### `registerServer(container, models)`
+
+Register a GraphQL schema and its dependencies in the Awilix container
+for use with Apollo Server.
+
+The container must provide the dependency `log`.
+
+Will register the top level dependencies
+`gqlTypeDefs`, `gqlResolvers`, and `gqlSchema`
+as well as named dependencies for each model.
+
+Each model is an object containing any or all of
+`typeDefs`, `resolvers`, `mutation`, and `query`.
+Each of these should be a factory function which
+will be registered in the container and thus may
+request dependencies.
+The name of the model is its key in the model object
+and is prefixed to the registered dependencies.
+For example, if the models object has a key `Cat`, then
+`CatTypeDefs`, `CatResolvers`, `CatMutation`, and `CatQuery`
+may all be registered.
+See the example below for the format of each type.
+
+#### Arguments
+
+1. `container` (*object* **required**): The [Awilix] container.
+2. `models` (*object*): The models to register.
+
+#### Returns
+
+(*undefined*)
+
 #### Example
 
 ```js
-registerClients(container, {
-  foo: {origin: 'https://example.com'},
-  {token: 'auth-token'}
+const Cat = `
+  type Cat {
+    name: String
+    type: CatType
+    food: FoodType
+  }
+`
+
+const CatType = ({ catTypes }) => `
+  enum CatType {
+    ${catTypes}
+  }
+`
+
+const typeDefs = ({ catTypes }) => () => [
+  CatType({ catTypes }),
+  Cat
+]
+
+export const resolvers = ({
+  FoodQuery
+}) => ({
+  food: (...args) => FoodQuery.get(...args)
 })
 
-const client = container.resolve('fooClient')
+export const query = ({ catService }) => ({
+  get: (parent, { id }, context, info) => catService.get(id)
+})
+
+export const mutation = ({ catService }) => ({
+  create: (parent, { input }, context, info) => {
+    return catService.create(input)
+  }
+})
+
+const catModel = {
+  typeDefs,
+  resolvers,
+  mutation,
+  query
+}
+
+const foodModel = {...} // will define FoodQuery.get
+const QueryModel = {...} // will use CatQuery.get(...)
+const MutationModel = {...} // will use CatMutation.create(...)
+const RootModel = {...}
+
+registerModels(container, {
+  Food: FoodModel,
+  Cat: CatModel,
+  Root: RootModel
+})
 ```
 
 ---
