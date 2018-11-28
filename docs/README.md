@@ -39,7 +39,7 @@ Supports singleton or scoped schema.
 If `schema` is not provided, it will be resolved for each request with
 
 ```
-ctx.state.container.resolve('schema')
+ctx.state.container.resolve('gqlSchema')
 ```
 
 #### Arguments
