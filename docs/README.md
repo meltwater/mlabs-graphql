@@ -245,7 +245,7 @@ const Cat = `
 
 const CatType = ({ catTypes }) => `
   enum CatType {
-    ${catTypes}
+    ${catTypes.join(' ')}
   }
 `
 
@@ -277,10 +277,10 @@ const catModel = {
   query
 }
 
-const foodModel = {...} // will define FoodQuery.get
+const foodModel = {...} // will define FoodQuery.get(...)
 const QueryModel = {...} // will use CatQuery.get(...)
 const MutationModel = {...} // will use CatMutation.create(...)
-const RootModel = {...}
+const RootModel = {...} // will define Query and Mutation under schema
 
 registerModels(container, {
   Food: FoodModel,
