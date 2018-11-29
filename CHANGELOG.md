@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 [Unreleased]
 
-### Changed
+### [5.0.0] / 2018-11-29
 
 - (**Breaking**) Rename `schema` dependency to `gqlSchema`.
 
@@ -107,7 +107,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 [makenew-node-lib]: https://github.com/meltwater/makenew-node-lib
 [mlabs-graphql-client]: https://github.com/meltwater/mlabs-graphql-client
 
-[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v4.0.0...HEAD
+[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v5.0.0...HEAD
+[5.0.0]: https://github.com/meltwater/mlabs-graphql/compare/v4.0.0...v5.0.0
 [4.0.0]: https://github.com/meltwater/mlabs-graphql/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/meltwater/mlabs-graphql/compare/v2.0.3...v3.0.0
 [2.0.3]: https://github.com/meltwater/mlabs-graphql/compare/v2.0.2...v2.0.3
