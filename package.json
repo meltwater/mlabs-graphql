@@ -99,7 +99,7 @@
   "dependencies": {
     "@meltwater/mlabs-http": "^1.0.0",
     "@meltwater/mlabs-logger": "^5.1.1",
-    "@meltwater/phi": "^2.0.0",
+    "@meltwater/phi": "^3.0.0",
     "apollo-cache-inmemory": "^1.1.12",
     "apollo-client": "^2.2.8",
     "apollo-link": "^1.2.1",
