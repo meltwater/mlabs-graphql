@@ -104,6 +104,7 @@
     "apollo-client": "^2.2.8",
     "apollo-link": "^1.2.1",
     "apollo-link-http": "^1.5.3",
+    "apollo-server-core": "^2.3.1",
     "apollo-server-koa": "^2.3.1",
     "apollo-server-module-graphiql": "^1.4.0",
     "async-retry": "^1.2.3",
@@ -118,7 +119,8 @@
     "koa-router": "^7.3.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-transition-group": "^2.2.0"
+    "react-transition-group": "^2.2.0",
+    "type-is": "^1.6.16"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
