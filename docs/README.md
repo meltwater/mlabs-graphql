@@ -51,15 +51,12 @@ ctx.state.container.resolve('gqlSchema')
       Default: resolve a schema scoped to each request (see above).
     - `graphqlRoot` (*string*): Path to serve GraphQL endpoint.
       Default: `/graphql`.
-    - `graphiqlRoot` (*string*): Path to serve [GraphiQL] endpoint.
-      If `null`, the endpoint will be unavailable.
-      Default: `/graphiql`.
-    - `voyagerRoot` (*string*): Path to serve [GraphQL Voyager] endpoint.
-      If `null`, the endpoint will be unavailable.
-      Default: `/voyager`.
     - `playgroundRoot` (*string*): Path to serve [GraphQL Playground] endpoint.
       If `null`, the endpoint will be unavailable.
       Default: `/playground`.
+    - `voyagerRoot` (*string*): Path to serve [GraphQL Voyager] endpoint.
+      If `null`, the endpoint will be unavailable.
+      Default: `/voyager`.
 
 #### Returns
 

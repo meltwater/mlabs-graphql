@@ -16,7 +16,7 @@ to ensure version compatibility and maximize code reuse.
   in the Awilix dependency tree with automatic creation of sub-dependencies.
 - Create a Koa router for the GraphQL [Apollo Server]
   with a static or request-scoped schema.
-  Includes [GraphiQL] and [GraphQL Voyager].
+  Includes [GraphQL Playground] and [GraphQL Voyager].
 - Import all [GraphQL.js] and [GraphQL-tools] modules from this module.
 - Conveniently import `gql`, the [graphql-tag], as the default import
   from this module.
@@ -24,7 +24,7 @@ to ensure version compatibility and maximize code reuse.
 [GraphQL.js]: http://graphql.org/graphql-js/
 [GraphQL-tools]: https://www.apollographql.com/docs/graphql-tools/
 [GraphQL Voyager]: https://github.com/APIs-guru/graphql-voyager
-[GraphiQL]: https://github.com/graphql/graphiql
+[GraphQL Playground]: https://github.com/prisma/graphql-playground
 [graphql-tag]: https://github.com/apollographql/graphql-tag
 [Apollo Server]: https://www.apollographql.com/docs/apollo-server/
 

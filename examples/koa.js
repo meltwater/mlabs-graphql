@@ -28,7 +28,9 @@ export default ({ log }) => async (port = 9000) => {
   app.use(graphqlRouter.allowedMethods())
   return new Promise(() => {
     app.listen(port, () => {
-      log.info(`Server: http://localhost:${port}/graphiql`)
+      log.info(`Playground: http://localhost:${port}/playground`)
+      log.info(`Voyager: http://localhost:${port}/voyager`)
+      log.info(`Server: http://localhost:${port}/graphql`)
     })
   })
 }
