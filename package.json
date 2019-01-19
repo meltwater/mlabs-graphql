@@ -1,6 +1,6 @@
 {
   "name": "@meltwater/mlabs-graphql",
-  "version": "6.0.0-alpha.8",
+  "version": "6.0.0-alpha.9",
   "description": "GraphQL client and server toolkit.",
   "main": "dist/index.js",
   "module": "index.js",
