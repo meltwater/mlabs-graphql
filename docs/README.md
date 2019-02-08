@@ -4,6 +4,7 @@
 
 - [`koaGraphql(options)`](#koagraphqloptions)
 - [`createClient(options)`](#createclientoptions)
+- [`createServer(options)`](#createserveroptions)
 - [`registerClient(container, client)`](#registerclientcontainer-client)
 - [`registerClients(container, clients)`](#registerclientscontainer-clients-defaults)
 - [`registerServer(container, models)`](#registerservercontainer-models)
@@ -34,23 +35,47 @@ import gql, { graphql, makeExecutableSchema } from '@meltwater/mlabs-graphql'
 ---
 ### `koaGraphql(options)`
 
-[Koa router][koa-router] for [Apollo GraphQL server][apollo-server].
+[Koa router][koa-router] for [Apollo GraphQL Server][apollo-server]
+[GraphQL Playground] and [GraphQL Voyager].
 
-Supports singleton or scoped schema.
-If `schema` is not provided, it will be resolved for each request with
+Creates a new Apollo server instance for each request.
+The server is created with `context` set to the Koa `ctx`
+and assigned to `ctx.state.apolloServer`.
 
-```
-ctx.state.container.resolve('gqlSchema')
-```
+The server is created using the following logic:
+
+- If `ctx.state.container` is defined,
+  register a scoped `apolloServer` in the [Awilix] container and resolve it.
+  - Depends on `gqlTypeDefs`, `gqlResolvers`,
+    and `log` being registered in the container.
+  - This method ignores the explicit `typeDefs` and `resolvers` options.
+    Register these in the container instead.
+  - To use the explicit `schema` option,
+    register `gqlTypeDefs` and `gqlResolvers` as `null`
+    and pass `schema` normally.
+- If `ctx.state.container` not defined,
+  look for `gqlTypeDefs`, `gqlResolvers`, and `gqlSchema`
+  in `ctx.state` and pass to [`createServer`]
+  as `typeDefs`, `resolvers`, and `schema` respectively.
+  - If `schema`, `resolvers`, or `typeDefs` are passed
+    these will override any corresponding values in `ctx.state`.
 
 #### Arguments
 
 1. `options` (*object*):
-   Any additional options are passed directly to [Koa Apollo Server][apollo-server].
+   Any additional options are passed directly to [`createServer`].
     - `schema` (*object*): The GraphQL schema.
-      Default: resolve a schema scoped to each request (see above).
+      Default: null.
+    - `typeDefs` (*object*): The GraphQL type defs.
+      Default: null.
+    - `resolvers` (*object*): The GraphQL resolvers map.
+      Default: null.
+    - `middleware` (*array*): Koa middleware to use after Apollo server starts
+      but before the request is handled.
     - `graphqlRoot` (*string*): Path to serve GraphQL endpoint.
       Default: `/graphql`.
+    - `subscriptionsRoot ` (*string*): Path to serve GraphQL subscriptions endpoint.
+      Default: `/subscriptions`.
     - `playgroundRoot` (*string*): Path to serve [GraphQL Playground] endpoint.
       If `null`, the endpoint will be unavailable.
       Default: `/playground`.
@@ -69,6 +94,32 @@ graphqlRouter = koaGraphql()
 app.use(graphqlRouter.routes())
 app.use(graphqlRouter.allowedMethods())
 ```
+
+[`createServer`](#createserveroptions)
+
+---
+### `createServer(options)`
+
+Create an [ApolloServer].
+Either `typeDefs` and `resolvers` or a `schema` must be provided.
+
+#### Arguments
+
+1. `options` (*object*):
+   Any additional options are passed directly to the [ApolloServer].
+    - `schema` (*object*): The GraphQL schema.
+    - `typeDefs` (*object*): The GraphQL type defs.
+    - `resolvers` (*object*): The GraphQL resolvers map.
+    - `graphqlRoot` (*string*): Path to serve GraphQL endpoint.
+      Default: `/graphql`.
+    - `subscriptionsRoot ` (*string*): Path to serve GraphQL subscriptions endpoint.
+      Default: `/subscriptions`.
+    - `log` (*object*): A [Logger].
+      Default: one will be created.
+
+#### Returns
+
+(*ApolloServer*)
 
 ---
 ### `createClient(options)`
@@ -199,14 +250,24 @@ using [`registerClient`](#registerclientcontainer-client).
 ---
 ### `registerServer(container, models)`
 
-Register a GraphQL schema and its dependencies in the Awilix container
+Register a GraphQL schema and its dependencies in the [Awilix] container
 for use with Apollo Server.
 
 The container must provide the dependency `log`.
 
 Will register the top level dependencies
-`gqlTypeDefs`, `gqlResolvers`, and `gqlSchema`
+`gqlTypeDefs`, `gqlResolvers`
 as well as named dependencies for each model.
+
+Also, registers a singleton `apolloServer` and the following methods.
+(The singleton server is not used for request handling.)
+Each takes no arguments and returns a promise:
+  - `apolloServerStart`: Calls `willStart`.
+  - `apolloServerStop`: Calls `stop`.
+  - `installApolloServerSubscriptionHandlers`:
+    Calls `installSubscriptionHandlers` for websocket subscriptions support.
+    Depends on `server` as a registered dependency which should be
+    an instance of Node.js built in `http.Server`.
 
 Each model is an object containing any or all of
 `typeDefs`, `resolvers`, `mutation`, and `query`.
@@ -578,6 +639,7 @@ client.mutate({mutation, name: 'Greeting'})
 (*object*): The response.
 
 [Awilix]: https://github.com/jeffijoe/awilix
+[ApolloServer]: https://www.apollographql.com/docs/apollo-server/api/apollo-server.html#ApolloServer
 [Apollo Client]: https://www.apollographql.com/docs/react/
 [Apollo Cache]: https://www.apollographql.com/docs/react/basics/caching.html
 [Apollo InMemoryCache]: https://www.apollographql.com/docs/react/basics/caching.html

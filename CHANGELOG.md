@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Changed
+
+- (**Breaking**) Apollo Server updated to version 2.
+- (**Breaking**) `graphqlKoa` has new options and behavior.
+  See docs for details.
+- Better error handling and logging.
+
+### Added
+
+- `createServer`.
+- Server support for subscriptions and uploads (no direct client support yet).
+- New singleton dependencies registered with `registerServer`:
+  - `apolloServer`
+  - `apolloServerStart`
+  - `apolloServerStop`
+  - `installApolloServerSubscriptionHandlers`
+
+### Removed
+
+- (**Breaking**) GraphiQL (use GraphQL Playground instead).
+- (**Breaking**) No longer registers `gqlSchema` since Apollo server 2
+  now creates the schema.
+
 ## [5.0.1] / 2018-12-17
 
 ### Changed
