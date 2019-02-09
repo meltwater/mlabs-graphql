@@ -100,13 +100,13 @@ app.use(graphqlRouter.allowedMethods())
 ---
 ### `createServer(options)`
 
-Create an [ApolloServer].
+Create an [Apollo Server].
 Either `typeDefs` and `resolvers` or a `schema` must be provided.
 
 #### Arguments
 
 1. `options` (*object*):
-   Any additional options are passed directly to the [ApolloServer].
+   Any additional options are passed directly to the [Apollo Server].
     - `schema` (*object*): The GraphQL schema.
     - `typeDefs` (*object*): The GraphQL type defs.
     - `resolvers` (*object*): The GraphQL resolvers map.
@@ -639,7 +639,7 @@ client.mutate({mutation, name: 'Greeting'})
 (*object*): The response.
 
 [Awilix]: https://github.com/jeffijoe/awilix
-[ApolloServer]: https://www.apollographql.com/docs/apollo-server/api/apollo-server.html#ApolloServer
+[Apollo Server]: https://www.apollographql.com/docs/apollo-server/api/apollo-server.html#ApolloServer
 [Apollo Client]: https://www.apollographql.com/docs/react/
 [Apollo Cache]: https://www.apollographql.com/docs/react/basics/caching.html
 [Apollo InMemoryCache]: https://www.apollographql.com/docs/react/basics/caching.html
