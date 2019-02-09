@@ -154,6 +154,12 @@ app.listen()
 
 #### Dependency Injection
 
+Define `typeDefs` and `resolvers` that can use scoped dependencies
+and use `registerServer` to add them to the [Awilix] container.
+Then, add a scoped container to the Koa `ctx.state` and `koaGraphql`
+will use the container to handle each request with an ApolloServer
+scoped to that request.
+
 ```js
 import { createContainer, asValue } from 'awilix'
 import createLogger from '@meltwater/mlabs-logger'
