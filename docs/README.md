@@ -53,7 +53,7 @@ The server is created using the following logic:
   - To use the explicit `schema` option,
     register `gqlTypeDefs` and `gqlResolvers` as `null`
     and pass `schema` normally.
-- If `ctx.state.container` not defined,
+- If `ctx.state.container` is not defined,
   look for `gqlTypeDefs`, `gqlResolvers`, and `gqlSchema`
   in `ctx.state` and pass to [`createServer`]
   as `typeDefs`, `resolvers`, and `schema` respectively.
@@ -65,11 +65,11 @@ The server is created using the following logic:
 1. `options` (*object*):
    Any additional options are passed directly to [`createServer`].
     - `schema` (*object*): The GraphQL schema.
-      Default: null.
+      Default: `null`.
     - `typeDefs` (*object*): The GraphQL type defs.
-      Default: null.
+      Default: `null`.
     - `resolvers` (*object*): The GraphQL resolvers map.
-      Default: null.
+      Default: `null`.
     - `middleware` (*array*): Koa middleware to use after Apollo server starts
       but before the request is handled.
     - `graphqlRoot` (*string*): Path to serve GraphQL endpoint.
