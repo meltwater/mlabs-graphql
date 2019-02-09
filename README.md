@@ -110,7 +110,7 @@ logQuery().catch(err => { console.log(err) })
 
 #### Dependency Injection
 
-Register each [GraphQL Client] and its dependencies in an Awilix container
+Register each [GraphQL Client] and its dependencies in an [Awilix] container
 
 ```js
 import { createContainer, asValue } from 'awilix'
@@ -143,14 +143,47 @@ Create and run a Koa GraphQL [Apollo Server] with
 import Koa from 'koa'
 import { koaGraphql } from '@meltwater/mlabs-graphql'
 
-import schema from './schema'
+import { typeDefs, resolvers } from './schema'
 
 const app = new Koa()
-const graphqlRouter = koaGraphql({schema})
+const graphqlRouter = koaGraphql({ typeDefs, resolvers })
 app.use(graphqlRouter.routes())
 app.use(graphqlRouter.allowedMethods())
 app.listen()
 ```
+
+#### Dependency Injection
+
+```js
+import { createContainer, asValue } from 'awilix'
+import createLogger from '@meltwater/mlabs-logger'
+import { registerServer } from '@meltwater/mlabs-graphql'
+
+import gqlModels from './models'
+
+const container = createContainer()
+
+container.register({
+  log: asValue(createLogger())
+})
+
+registerServer(container, gqlModels)
+
+const app = new Koa()
+
+app.use((ctx, next) => {
+  ctx.state.container = container.createScope()
+  return next()
+})
+
+const graphqlRouter = koaGraphql()
+app.use(graphqlRouter.routes())
+app.use(graphqlRouter.allowedMethods())
+app.listen()
+```
+
+[Awilix]: https://github.com/jeffijoe/awilix
+[GraphQL Client]: ./docs#graphqlclient
 
 ## Development Quickstart
 
