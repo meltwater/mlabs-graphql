@@ -95,7 +95,7 @@ app.use(graphqlRouter.routes())
 app.use(graphqlRouter.allowedMethods())
 ```
 
-[`createServer`](#createserveroptions)
+[`createServer`]: (#createserveroptions)
 
 ---
 ### `createServer(options)`
