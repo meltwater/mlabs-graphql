@@ -7,7 +7,7 @@
 - [`createServer(options)`](#createserveroptions)
 - [`registerClient(container, client)`](#registerclientcontainer-client)
 - [`registerClients(container, clients)`](#registerclientscontainer-clients-defaults)
-- [`registerServer(container, models)`](#registerservercontainer-models)
+- [`registerServer(container, models)`](#registerservercontainer-models-options)
 - [`collectClientMetrics(options)`](#collectclientmetricsoptions)
 - [`examples`](#examples)
 - [`GraphQLClient`](#graphqlclient)
@@ -45,14 +45,11 @@ and assigned to `ctx.state.apolloServer`.
 The server is created using the following logic:
 
 - If `ctx.state.container` is defined,
-  register a scoped `apolloServer` in the [Awilix] container and resolve it.
-  - Depends on `gqlTypeDefs`, `gqlResolvers`,
-    and `log` being registered in the container.
-  - This method ignores the explicit `typeDefs` and `resolvers` options.
-    Register these in the container instead.
-  - To use the explicit `schema` option,
-    register `gqlTypeDefs` and `gqlResolvers` as `null`
-    and pass `schema` normally.
+  resolve `apolloServer` from the [Awilix] container.
+  - The passed `options` will be registered as `gqlOptions`
+    before resolving `apolloServer`.
+  - The Koa context will be registered as `gqlContext`
+    before resolving `apolloServer`.
 - If `ctx.state.container` is not defined,
   look for `gqlTypeDefs`, `gqlResolvers`, and `gqlSchema`
   in `ctx.state` and pass to [`createServer`]
@@ -248,26 +245,30 @@ using [`registerClient`](#registerclientcontainer-client).
 (*undefined*)
 
 ---
-### `registerServer(container, models)`
+### `registerServer(container, models, options)`
 
-Register a GraphQL schema and its dependencies in the [Awilix] container
-for use with Apollo Server.
+Register a GraphQL server and its dependencies in the [Awilix] container.
+The `options` argument is optional and will be passed to [`createServer`].
 
 The container must provide the dependency `log`.
 
-Will register the top level dependencies
-`gqlTypeDefs`, `gqlResolvers`
-as well as named dependencies for each model.
+Register the following dependencies
+as well as named dependencies for each model (see below).
+Any of these may be overridden by re-registering them
+after calling this method.
 
-Also, registers a singleton `apolloServer` and the following methods.
-(The singleton server is not used for request handling.)
-Each takes no arguments and returns a promise:
-  - `apolloServerStart`: Calls `willStart`.
-  - `apolloServerStop`: Calls `stop`.
-  - `installApolloServerSubscriptionHandlers`:
-    Calls `installSubscriptionHandlers` for websocket subscriptions support.
-    Depends on `server` as a registered dependency which should be
-    an instance of Node.js built in `http.Server`.
+- `gqlTypeDefs` (singleton).
+  Pass `useScopedTypeDefs = true` in options to override this.
+- `gqlResolvers` (scoped).
+- `gqlContext` (scoped).
+- `gqlOptions` (scoped).
+- `apolloServer` (scoped).
+- `apolloServerStart`: Calls `willStart`.
+- `apolloServerStop`: Calls `stop`.
+- `installApolloServerSubscriptionHandlers`:
+  Calls `installSubscriptionHandlers` for websocket subscriptions support.
+  Depends on `server` as a registered dependency which should be
+  an instance of the Node.js built in `http.Server`.
 
 Each model is an object containing any or all of
 `typeDefs`, `resolvers`, `mutation`, and `query`.
