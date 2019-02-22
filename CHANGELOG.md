@@ -17,9 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 
 - `createServer`.
-- `fetchRemoteSchemas`.
+- `fetchRemoteSchema` and `fetchRemoteSchemas`.
 - Server support for subscriptions and uploads (no direct client support yet).
-- Server support for fetching remote schemas and registering gqlSchemas
 - New singleton dependencies registered with `registerServer`:
   - `apolloServer`
   - `apolloServerStart`

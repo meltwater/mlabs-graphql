@@ -5,6 +5,8 @@
 - [`koaGraphql(options)`](#koagraphqloptions)
 - [`createClient(options)`](#createclientoptions)
 - [`createServer(options)`](#createserveroptions)
+- [`fetchRemoteSchema(options)`](#fetchremoteschemaoptions)
+- [`fetchRemoteSchemas(schemas, options)`](#fetchremoteschemasschemas-options)
 - [`registerClient(container, client)`](#registerclientcontainer-client)
 - [`registerClients(container, clients)`](#registerclientscontainer-clients-defaults)
 - [`registerServer(container, models)`](#registerservercontainer-models-options)
@@ -117,6 +119,57 @@ Either `typeDefs` and `resolvers` or a `schema` must be provided.
 #### Returns
 
 (*ApolloServer*)
+
+---
+### `fetchRemoteSchema(options)`
+
+Fetch a remote schema from a GraphQL endpoint
+using Apollo Link and [makeRemoteExecutableSchema].
+
+Returns a promise.
+
+#### Arguments
+
+1. `options` (*object*):
+    - `origin` (*string* **required**): The GraphQL server [URL origin].
+    - `path` (*string*): The GraphQL endpoint on the server.
+      Default: `/graphql`.
+    - `token` (*string*): Token to send in the `authorization` header.
+      Default: none.
+    - `link` (*object*): The [Apollo Link] to use.
+      Default: create a new [Apollo HTTP Link].
+    - `linkOptions` (*object*): Options passed directly to [Apollo HTTP Link]
+      if `link` is not provided.
+    - `schemaOptions` (*object*): Options passed directly to [makeRemoteExecutableSchema].
+      Default: none.
+
+#### Returns
+
+(*object*):
+  - `schema`: The remote executable schema.
+  - `link`: The Apollo Link for the remote schema.
+  - `introspectionQueryResultData`:
+    The data returned from the introspection query.
+
+---
+### `fetchRemoteSchemas(schemas, options)`
+
+Fetch remote schemas from a GraphQL endpoint using
+[`fetchRemoteSchema(options)`](#fetchremoteschemaoptions).
+
+Returns a promise.
+
+#### Arguments
+
+1. `schemas` (*object*): Object where each value is passed to
+   `fetchRemoteSchema`.
+2. `options`: (*object*): Default options to merge with each schema
+    before passing to `fetchRemoteSchema`.
+
+#### Returns
+
+(*object*): Object with the same keys as `schemas`
+with values replaced by the return of `fetchRemoteSchema`.
 
 ---
 ### `createClient(options)`
@@ -646,6 +699,8 @@ client.mutate({mutation, name: 'Greeting'})
 [Apollo InMemoryCache]: https://www.apollographql.com/docs/react/basics/caching.html
 [Apollo HTTP Link]: https://www.apollographql.com/docs/link/links/http.html
 [Apollo Link]: https://www.apollographql.com/docs/link/
+[Remote schemas]: https://www.apollographql.com/docs/graphql-tools/remote-schemas.html
+[makeRemoteExecutableSchema]: https://www.apollographql.com/docs/graphql-tools/remote-schemas.html#makeRemoteExecutableSchema
 [async-retry]: https://github.com/zeit/async-retry#readme
 [GraphQLClient]: #graphqlclient
 [GraphQL Voyager]: https://github.com/APIs-guru/graphql-voyager
