@@ -5,7 +5,7 @@ import {
   GraphQLString
 } from 'graphql'
 
-import { koaGraphql, fetchRemoteSchemas } from '../lib'
+import { koaGraphql, fetchRemoteSchema } from '../lib'
 
 const basicSchema = new GraphQLSchema({
   query: new GraphQLObjectType({
@@ -40,8 +40,8 @@ export const remote = (options) => async (
   path = '/graphql',
   port
 ) => {
-  const schemas = await fetchRemoteSchemas({ pokemon: { origin, path } })
-  const example = koa({ ...options, schema: schemas.pokemon.schema })
+  const { schema } = await fetchRemoteSchema({ origin, path })
+  const example = koa({ ...options, schema })
   return example(port)
 }
 
