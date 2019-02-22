@@ -5,23 +5,23 @@ import {
   GraphQLString
 } from 'graphql'
 
-import { koaGraphql } from '../lib'
+import { koaGraphql, fetchRemoteSchemas } from '../lib'
 
-export default ({ log }) => async (port = 9000) => {
-  const schema = new GraphQLSchema({
-    query: new GraphQLObjectType({
-      name: 'RootQueryType',
-      fields: {
-        hello: {
-          type: GraphQLString,
-          resolve () {
-            return 'world'
-          }
+const basicSchema = new GraphQLSchema({
+  query: new GraphQLObjectType({
+    name: 'RootQueryType',
+    fields: {
+      hello: {
+        type: GraphQLString,
+        resolve () {
+          return 'world'
         }
       }
-    })
+    }
   })
+})
 
+export const koa = ({ log, schema = basicSchema }) => async (port = 9000) => {
   const app = new Koa()
   const graphqlRouter = koaGraphql({ schema })
   app.use(graphqlRouter.routes())
@@ -34,3 +34,15 @@ export default ({ log }) => async (port = 9000) => {
     })
   })
 }
+
+export const remote = (options) => async (
+  origin = 'https://graphql-pokemon.now.sh',
+  path = '/graphql',
+  port
+) => {
+  const schemas = await fetchRemoteSchemas({ pokemon: { origin, path } })
+  const example = koa({ ...options, schema: schemas.pokemon.schema })
+  return example(port)
+}
+
+export default koa
