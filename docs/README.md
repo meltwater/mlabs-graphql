@@ -319,6 +319,7 @@ after calling this method.
 - `gqlTypeDefs` (singleton).
   Pass `useScopedTypeDefs = true` in options to override this.
 - `gqlResolvers` (scoped).
+- `gqlSchema` (scoped).
 - `gqlContext` (scoped).
 - `gqlOptions` (scoped).
 - `apolloServer` (scoped).
@@ -330,14 +331,15 @@ after calling this method.
   an instance of the Node.js built in `http.Server`.
 
 Each model is an object containing any or all of
-`typeDefs`, `resolvers`, `mutation`, and `query`.
+`typeDefs`, `resolvers`, `schema`, `mutation`, and `query`.
 Each of these should be a factory function which
 will be registered in the container and thus may
 request dependencies.
+(Supplying a constant non-factory functions is also supported.)
 The name of the model is its key in the model object
 and is prefixed to the registered dependencies.
 For example, if the models object has a key `Cat`, then
-`CatTypeDefs`, `CatResolvers`, `CatMutation`, and `CatQuery`
+`CatTypeDefs`, `CatResolvers`, `CatSchema`, `CatMutation`, and `CatQuery`
 may all be registered.
 See the example below for the format of each type.
 
