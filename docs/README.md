@@ -107,8 +107,12 @@ Either `typeDefs` and `resolvers` or a `schema` must be provided.
 1. `options` (*object*):
    Any additional options are passed directly to the [Apollo Server].
     - `schema` (*object*): The GraphQL schema.
+      If given will override all other schema-specific options below.
     - `typeDefs` (*object*): The GraphQL type defs.
     - `resolvers` (*object*): The GraphQL resolvers map.
+    - `mergeInfo` (*object*): The `mergeInfo` option for [`mergeSchemas`].
+    - `transformSchema` (*function*): The `transformSchema` option for [`mergeSchemas`].
+    - `onTypeConflict` (*function*): The `onTypeConflict` option for [`mergeSchemas`].
     - `graphqlRoot` (*string*): Path to serve GraphQL endpoint.
       Default: `/graphql`.
     - `subscriptionsRoot ` (*string*): Path to serve GraphQL subscriptions endpoint.
@@ -119,6 +123,8 @@ Either `typeDefs` and `resolvers` or a `schema` must be provided.
 #### Returns
 
 (*ApolloServer*)
+
+[`mergeSchemas`]: https://www.apollographql.com/docs/apollo-server/api/graphql-tools.html#mergeSchemas
 
 ---
 ### `fetchRemoteSchema(options)`

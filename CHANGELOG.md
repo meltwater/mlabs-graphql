@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - `createServer`.
 - `fetchRemoteSchema` and `fetchRemoteSchemas`.
+- Server support for `mergeSchemas` via new options.
 - Server support for subscriptions and uploads (no direct client support yet).
 - New singleton dependencies registered with `registerServer`:
   - `apolloServer`
