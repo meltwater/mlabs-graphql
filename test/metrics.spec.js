@@ -66,9 +66,7 @@ test('get', async t => {
   // Remove metric line that depends on millisecond timing
   const m = metrics.split('\n')
   const snapshot = [
-    ...m.slice(0, 23),
-    ...m.slice(24, 28),
-    ...m.slice(29)
+    ...m.slice(0, 26)
   ].join('\n')
 
   t.snapshot(snapshot)
