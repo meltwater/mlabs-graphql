@@ -26,13 +26,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   - `apolloServerStart`
   - `apolloServerStop`
   - `installApolloServerSubscriptionHandlers`
-  - `gqlSchema`
+  - `gqlSchemas`
 
 ### Removed
 
 - (**Breaking**) GraphiQL (use GraphQL Playground instead).
-- (**Breaking**) No longer registers `gqlSchema` since Apollo server 2
-  now creates the schema.
+- (**Breaking**) `registerServer` no longer registers `gqlSchema`.
 
 ## [5.0.1] / 2018-12-17
 
