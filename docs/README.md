@@ -108,7 +108,10 @@ Either `typeDefs` and `resolvers` or a `schema` must be provided.
    Any additional options are passed directly to the [Apollo Server].
     - `schema` (*object*): The GraphQL schema.
       If given will override all other schema-specific options below.
-    - `typeDefs` (*object*): The GraphQL type defs.
+    - `typeDefs` (*array*): The GraphQL type defs.
+      Must be either an array of only strings or an array of
+      only strings tagged with `gql`, an array of mixed types
+      is not currently supported.
     - `resolvers` (*object*): The GraphQL resolvers map.
     - `mergeInfo` (*object*): The `mergeInfo` option for [`mergeSchemas`].
     - `transformSchema` (*function*): The `transformSchema` option for [`mergeSchemas`].
