@@ -12,7 +12,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - (**Breaking**) Apollo Server updated to version 2.
 - (**Breaking**) `graphqlKoa` has new options and behavior.
   See docs for details.
-- Use scoped cache and default cache policy.
 - Better error handling and logging.
 
 ### Added
