@@ -322,6 +322,7 @@ after calling this method.
 - `gqlTypeDefs` (singleton).
   Pass `useScopedTypeDefs = true` in options to override this.
 - `gqlResolvers` (scoped).
+- `gqlSchemas` (scoped).
 - `gqlSchema` (scoped).
 - `gqlContext` (scoped).
 - `gqlOptions` (scoped).
