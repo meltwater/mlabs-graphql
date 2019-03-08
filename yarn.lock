@@ -809,7 +809,7 @@
     pino "^5.4.1"
     pino-pretty "^2.1.0"
 
-"@meltwater/mlabs-http@^1.2.0":
+"@meltwater/mlabs-http@^1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@meltwater/mlabs-http/-/mlabs-http-1.3.0.tgz#5896f8099bdd260e3a603d442ce70fafead61ac3"
   integrity sha512-0lssq1+xBSwSgD9cb6zH5dQXC9Lc0Try0TEXui66UeMlHDmBs0xhfTzE2y3pJURceXsQ24rh3VPAPYHNEJyiMw==
