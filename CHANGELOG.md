@@ -32,6 +32,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - (**Breaking**) GraphiQL (use GraphQL Playground instead).
 - (**Breaking**) `registerServer` no longer registers `gqlSchema`.
 
+### Fixed
+
+- Use `client` not `name` log property.
+
 ## [5.0.1] / 2018-12-17
 
 ### Changed
