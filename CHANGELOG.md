@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [6.0.0] / 2019-03-08
 
 ### Changed
 
@@ -144,7 +144,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 [makenew-node-lib]: https://github.com/meltwater/makenew-node-lib
 [mlabs-graphql-client]: https://github.com/meltwater/mlabs-graphql-client
 
-[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v5.0.1...HEAD
+[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v6.0.0...HEAD
+[6.0.0]: https://github.com/meltwater/mlabs-graphql/compare/v5.0.1...v6.0.0
 [5.0.1]: https://github.com/meltwater/mlabs-graphql/compare/v5.0.0...v5.0.1
 [5.0.0]: https://github.com/meltwater/mlabs-graphql/compare/v4.0.0...v5.0.0
 [4.0.0]: https://github.com/meltwater/mlabs-graphql/compare/v3.0.0...v4.0.0
