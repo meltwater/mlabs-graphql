@@ -40,8 +40,9 @@ export const remote = (options) => async (
   path = '/graphql',
   port
 ) => {
-  const { schema } = await fetchRemoteSchema({ origin, path })
+  const { schema, health } = await fetchRemoteSchema({ origin, path })
   const example = koa({ ...options, schema })
+  await health()
   return example(port)
 }
 

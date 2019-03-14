@@ -157,6 +157,8 @@ Returns a promise.
 (*object*):
   - `schema`: The remote executable schema.
   - `link`: The Apollo Link for the remote schema.
+  - `health`: An async function that will fetch a new schema,
+     compare the current schema, and throw if they differ.
   - `introspectionQueryResultData`:
     The data returned from the introspection query.
 
