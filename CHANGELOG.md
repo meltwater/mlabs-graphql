@@ -10,6 +10,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 
 - `health` function for `fetchRemoteSchema`.
+- `useScopedServer` boolean (default true) added to `registerServer` options.
+- Top export `GraphQLModels` that can be passed to `registerServer`
+- New Directive models:
+  - Authenticate
+  - DateFormat
+  - HasRole
+- @meltwater/tau added as dependency.
+
+### Changed
+
+- `gqlContext` registered dependency:
+  - `gqlContext` is no longer registered in `apolloServerFromContainer`.
+  - Registered as function, injected with a scoped container.
+  - Resolved `gqlContext` accepts Koa Context passing it to ApolloServer.
+  - Context state has getDep` and `getDeps`, wrappers for container.resolve.
 
 ## [6.0.0] / 2019-03-08
 
