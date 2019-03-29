@@ -1,5 +1,6 @@
 export { default } from 'graphql-tag'
 export { default as gql } from 'graphql-tag'
+export { default as DataLoader } from 'dataloader'
 export * from 'graphql-tools'
 export * from 'graphql'
 export * from './lib'
