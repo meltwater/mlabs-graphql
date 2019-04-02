@@ -3,7 +3,7 @@ import path from 'path'
 import createExamples from '@meltwater/examplr'
 
 import client, { metrics, query } from './client'
-import run from './run'
+import exec from './exec'
 import koa, { remote } from './koa'
 
 export const examples = {
@@ -11,7 +11,7 @@ export const examples = {
   client,
   query,
   remote,
-  run,
+  exec,
   koa
 }
 
