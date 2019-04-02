@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 
+- `execSchema` function.
+- New `gqlExec` dependency wrapping `execSchema`.
 - `health` function for `fetchRemoteSchema`.
 - `useScopedServer` boolean (default true) added to `registerServer` options.
 

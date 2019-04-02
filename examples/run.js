@@ -1,11 +1,10 @@
-import gql from 'graphql-tag'
 import {
   GraphQLSchema,
   GraphQLObjectType,
   GraphQLString
 } from 'graphql'
 
-import { runGql } from '../lib'
+import { execSchema } from '../lib'
 
 const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
@@ -22,7 +21,7 @@ const schema = new GraphQLSchema({
 })
 
 export default ({ log }) => async () => {
-  return runGql({
+  return execSchema({
     query: `query getHello { hello }`,
     operationName: 'getHello',
     schema,
