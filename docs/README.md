@@ -113,6 +113,8 @@ Either `typeDefs` and `resolvers` or a `schema` must be provided.
       only strings tagged with `gql`, an array of mixed types
       is not currently supported.
     - `resolvers` (*object*): The GraphQL resolvers map.
+    - `schemaDirectives` (*object*): The `schemaDirectives` option
+      when creating or merging the schema.
     - `mergeInfo` (*object*): The `mergeInfo` option for [`mergeSchemas`].
     - `transformSchema` (*function*): The `transformSchema` option for [`mergeSchemas`].
     - `onTypeConflict` (*function*): The `onTypeConflict` option for [`mergeSchemas`].
@@ -158,7 +160,7 @@ Returns a promise.
   - `schema`: The remote executable schema.
   - `link`: The Apollo Link for the remote schema.
   - `health`: An async function that will fetch a new schema,
-     compare the current schema, and throw if they differ.
+    compare the current schema, and throw if they differ.
   - `introspectionQueryResultData`:
     The data returned from the introspection query.
 
@@ -326,9 +328,11 @@ after calling this method.
 - `gqlResolvers` (scoped).
 - `gqlSchemas` (scoped).
 - `gqlSchema` (scoped).
+- `gqlSchemaDirectives` (scoped).
 - `gqlContext` (scoped).
 - `gqlOptions` (scoped).
 - `apolloServer` (scoped).
+  Pass `useScopedServer = false` in options to use singleton.
 - `apolloServerStart`: Calls `willStart`.
 - `apolloServerStop`: Calls `stop`.
 - `installApolloServerSubscriptionHandlers`:
@@ -337,7 +341,8 @@ after calling this method.
   an instance of the Node.js built in `http.Server`.
 
 Each model is an object containing any or all of
-`typeDefs`, `resolvers`, `schema`, `mutation`, and `query`.
+`typeDefs`, `resolvers`, `schema`,
+`directive`, `directiveResolver`, `mutation`, and `query`.
 Each of these should be a factory function which
 will be registered in the container and thus may
 request dependencies.
@@ -345,9 +350,20 @@ request dependencies.
 The name of the model is its key in the model object
 and is prefixed to the registered dependencies.
 For example, if the models object has a key `Cat`, then
-`CatTypeDefs`, `CatResolvers`, `CatSchema`, `CatMutation`, and `CatQuery`
+`CatTypeDefs`, `CatResolvers`, `CatSchema`,
+`CatDirective`, `CatDirectiveResolver`, `CatMutation`, and `CatQuery`
 may all be registered.
 See the example below for the format of each type.
+
+#### Context
+
+The following properties are added to the context:
+
+- `container`: The Awilix container scoped to the request.
+- `getDep`: Alias for `container.resolve`.
+- `getDeps`: Function that takes a list of dependency names
+  and resolves them as an object.
+  Additional arguments are passes to `container.resolve`.
 
 #### Arguments
 
