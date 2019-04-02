@@ -1,3 +1,4 @@
+import gql from 'graphql-tag'
 import {
   GraphQLSchema,
   GraphQLObjectType,
