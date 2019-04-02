@@ -5,6 +5,7 @@
 - [`koaGraphql(options)`](#koagraphqloptions)
 - [`createClient(options)`](#createclientoptions)
 - [`createServer(options)`](#createserveroptions)
+- [`execSchema(options)`](#execschemaoptions)
 - [`fetchRemoteSchema(options)`](#fetchremoteschemaoptions)
 - [`fetchRemoteSchemas(schemas, options)`](#fetchremoteschemasschemas-options)
 - [`registerClient(container, client)`](#registerclientcontainer-client)
@@ -130,6 +131,28 @@ Either `typeDefs` and `resolvers` or a `schema` must be provided.
 (*ApolloServer*)
 
 [`mergeSchemas`]: https://www.apollographql.com/docs/apollo-server/api/graphql-tools.html#mergeSchemas
+
+---
+### `execSchema(options)`
+
+Execute a query on a schema (wraps [graphql](https://graphql.org/graphql-js/graphql/#graphql)).
+
+#### Arguments
+
+1. `options` (*object*):
+    - `query` (*object*): The `graphql` `requestString` argument.
+    - `schema` (*object*): The `graphql` `schema` argument.
+    - `variables` (*object*): The `graphql` `variableValues` argument.
+    - `root` (*object*): The `graphql` `rootValue` argument.
+    - `context` (*object*): The `graphql` `contextValue` argument.
+    - `throwGqlErrors` (*boolean*): If true, throw when any `errors` are returned.
+      Default: true.
+    - `log` (*object*): A [Logger].
+      Default: one will be created.
+
+#### Returns
+
+(*object*) Promise from the `graphql` function.
 
 ---
 ### `fetchRemoteSchema(options)`
@@ -331,6 +354,10 @@ after calling this method.
 - `gqlSchemaDirectives` (scoped).
 - `gqlContext` (scoped).
 - `gqlOptions` (scoped).
+- `gqlRun` (scoped).
+  Function that wraps [`execSchema(options)`](#execschemaoptions)
+  and takes the following arguments:
+  `query`,` operationName`,` variables`, `context`,
 - `apolloServer` (scoped).
   Pass `useScopedServer = false` in options to use singleton.
 - `apolloServerStart`: Calls `willStart`.
