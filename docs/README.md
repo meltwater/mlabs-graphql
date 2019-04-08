@@ -354,7 +354,7 @@ after calling this method.
 - `gqlSchemaDirectives` (scoped).
 - `gqlContext` (scoped).
 - `gqlOptions` (scoped).
-- `gqlRun` (scoped).
+- `gqlExec` (scoped).
   Function that wraps [`execSchema(options)`](#execschemaoptions)
   and takes the following arguments:
   `query`,` operationName`,` variables`, `context`,
@@ -390,7 +390,7 @@ The following properties are added to the context:
 - `getDep`: Alias for `container.resolve`.
 - `getDeps`: Function that takes a list of dependency names
   and resolves them as an object.
-  Additional arguments are passes to `container.resolve`.
+  Additional arguments are passed to `container.resolve`.
 
 #### Arguments
 
