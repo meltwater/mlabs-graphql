@@ -118,7 +118,6 @@
     "koa-router": "^7.3.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-transition-group": "^2.2.0",
     "type-is": "^1.6.16"
   },
   "devDependencies": {
