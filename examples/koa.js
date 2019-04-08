@@ -24,6 +24,12 @@ const basicSchema = new GraphQLSchema({
 export const koa = ({ log, schema = basicSchema }) => async (port = 9000) => {
   const app = new Koa()
   const graphqlRouter = koaGraphql({ schema })
+
+  app.use((ctx, next) => {
+    ctx.state.log = log
+    return next()
+  })
+
   app.use(graphqlRouter.routes())
   app.use(graphqlRouter.allowedMethods())
   return new Promise(() => {
