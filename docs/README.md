@@ -114,6 +114,7 @@ Either `typeDefs` and `resolvers` or a `schema` must be provided.
       only strings tagged with `gql`, an array of mixed types
       is not currently supported.
     - `resolvers` (*object*): The GraphQL resolvers map.
+    - `remoteResolvers` (*object*): The GraphQL remote resolvers map.
     - `schemaDirectives` (*object*): The `schemaDirectives` option
       when creating or merging the schema.
     - `mergeInfo` (*object*): The `mergeInfo` option for [`mergeSchemas`].
@@ -349,6 +350,7 @@ after calling this method.
 - `gqlTypeDefs` (singleton).
   Pass `useScopedTypeDefs = true` in options to override this.
 - `gqlResolvers` (scoped).
+- `gqlRemoteResolvers` (scoped).
 - `gqlSchemas` (scoped).
 - `gqlSchema` (scoped).
 - `gqlSchemaDirectives` (scoped).
@@ -369,7 +371,8 @@ after calling this method.
 
 Each model is an object containing any or all of
 `typeDefs`, `resolvers`, `schema`,
-`directive`, `directiveResolver`, `mutation`, and `query`.
+`directive`, `directiveResolver`, `remoteResolver`,
+`mutation`, and `query`.
 Each of these should be a factory function which
 will be registered in the container and thus may
 request dependencies.
@@ -377,7 +380,7 @@ request dependencies.
 The name of the model is its key in the model object
 and is prefixed to the registered dependencies.
 For example, if the models object has a key `Cat`, then
-`CatTypeDefs`, `CatResolvers`, `CatSchema`,
+`CatTypeDefs`, `CatResolvers`, `CatRemoteResolvers`, `CatSchema`,
 `CatDirective`, `CatDirectiveResolver`, `CatMutation`, and `CatQuery`
 may all be registered.
 See the example below for the format of each type.
