@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [6.3.0] / 2019-06-28
+
+### Changed
+
+- Pass `createSchema` options to `makeExecutableSchema`.
+- Pass `remoteResolvers` to mergeSchemas as `resolvers`
+
+### Added
+
+- `remoteResolvers` option to `createServer`.
+- `gqlRemoteResolvers` to registered dependencies via `remoteResolvers`
+
 ## [6.2.0] / 2019-04-11
 
 ### Changed
@@ -168,7 +180,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 [makenew-node-lib]: https://github.com/meltwater/makenew-node-lib
 [mlabs-graphql-client]: https://github.com/meltwater/mlabs-graphql-client
 
-[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v6.2.0...HEAD
+[Unreleased]: https://github.com/meltwater/mlabs-graphql/compare/v6.3.0...HEAD
+[6.3.0]: https://github.com/meltwater/mlabs-graphql/compare/v6.2.0...v6.3.0
 [6.2.0]: https://github.com/meltwater/mlabs-graphql/compare/v6.1.0...v6.2.0
 [6.1.0]: https://github.com/meltwater/mlabs-graphql/compare/v6.0.0...v6.1.0
 [6.0.0]: https://github.com/meltwater/mlabs-graphql/compare/v5.0.1...v6.0.0
