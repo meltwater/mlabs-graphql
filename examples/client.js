@@ -32,7 +32,7 @@ export const metrics = ({ log, graphqlOrigin, graphqlPath }) => async (q = defau
   collectClientMetrics({
     register,
     metricOptions: {
-      'request_duration_milliseconds': {
+      request_duration_milliseconds: {
         buckets: [0, 200, 300, 800]
       }
     }
@@ -79,7 +79,8 @@ export default ({ log, graphqlOrigin, graphqlPath }) => async (q = defaultQuery)
     example: {
       origin: graphqlOrigin,
       path: graphqlPath
-    } }, {
+    }
+  }, {
     token: 'token'
   }
   )

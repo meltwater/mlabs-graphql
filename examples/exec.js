@@ -22,7 +22,7 @@ const schema = new GraphQLSchema({
 
 export default ({ log }) => async () => {
   return execSchema({
-    query: `query getHello { hello }`,
+    query: 'query getHello { hello }',
     operationName: 'getHello',
     schema,
     log
