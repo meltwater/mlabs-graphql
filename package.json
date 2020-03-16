@@ -106,6 +106,7 @@
     "node": ">=10.13.0"
   },
   "dependencies": {
+    "@koa/router": "^8.0.8",
     "@meltwater/mlabs-http": "^1.4.0",
     "@meltwater/mlabs-logger": "^5.3.0",
     "@meltwater/phi": "^3.0.0",
@@ -124,7 +125,6 @@
     "graphql-voyager": "^1.0.0-rc.15",
     "isomorphic-unfetch": "^3.0.0",
     "koa-bodyparser": "^4.2.0",
-    "koa-router": "^7.3.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "type-is": "^1.6.16"
