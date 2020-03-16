@@ -15,6 +15,7 @@ export const examples = {
   koa
 }
 
+// prettier-ignore
 const envVars = [
   'GRAPHQL_ORIGIN',
   'GRAPHQL_PATH',
