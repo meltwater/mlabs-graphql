@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- Better error logging.
+- Export Apollo Server error constructors from apollo-server-core.
+
+### Changed
+
+- Set Apollo Server `debug` option to true.
+    - Required to support better error logging.
+- Skip error middleware when no errors.
+- Use @koa-router over koa-router.
+- Update to prom-client v12.
+
 ## [6.3.0] / 2019-06-28
 
 ### Changed
