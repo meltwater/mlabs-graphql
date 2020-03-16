@@ -1,8 +1,4 @@
-import {
-  GraphQLSchema,
-  GraphQLObjectType,
-  GraphQLString
-} from 'graphql'
+import { GraphQLSchema, GraphQLObjectType, GraphQLString } from 'graphql'
 
 import { execSchema } from '../lib'
 

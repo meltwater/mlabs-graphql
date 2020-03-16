@@ -4,15 +4,19 @@ import gql from 'graphql-tag'
 
 import { createClient, registerClients, collectClientMetrics } from '../lib'
 
-const defaultQuery = gql`query GetSchema{
-  __schema {
-    types {
-      name
+const defaultQuery = gql`
+  query GetSchema {
+    __schema {
+      types {
+        name
+      }
     }
   }
-}`
+`
 
-export const query = ({ log, graphqlOrigin, graphqlPath }) => async (q = defaultQuery) => {
+export const query = ({ log, graphqlOrigin, graphqlPath }) => async (
+  q = defaultQuery
+) => {
   const query = typeof q === 'string' ? gql(q) : q
 
   const client = createClient({
@@ -27,7 +31,9 @@ export const query = ({ log, graphqlOrigin, graphqlPath }) => async (q = default
   return data
 }
 
-export const metrics = ({ log, graphqlOrigin, graphqlPath }) => async (q = defaultQuery) => {
+export const metrics = ({ log, graphqlOrigin, graphqlPath }) => async (
+  q = defaultQuery
+) => {
   const register = new Registry()
   collectClientMetrics({
     register,
@@ -54,17 +60,15 @@ export const metrics = ({ log, graphqlOrigin, graphqlPath }) => async (q = defau
     } catch (err) {}
   }
 
-  await Promise.all([
-    get(),
-    get(),
-    get()
-  ])
+  await Promise.all([get(), get(), get()])
 
   get().catch(() => {})
   return register.metrics()
 }
 
-export default ({ log, graphqlOrigin, graphqlPath }) => async (q = defaultQuery) => {
+export default ({ log, graphqlOrigin, graphqlPath }) => async (
+  q = defaultQuery
+) => {
   const query = typeof q === 'string' ? gql(q) : q
 
   const container = createContainer()
@@ -75,14 +79,17 @@ export default ({ log, graphqlOrigin, graphqlPath }) => async (q = defaultQuery)
     reqId: asValue('req-id')
   })
 
-  registerClients(container, {
-    example: {
-      origin: graphqlOrigin,
-      path: graphqlPath
+  registerClients(
+    container,
+    {
+      example: {
+        origin: graphqlOrigin,
+        path: graphqlPath
+      }
+    },
+    {
+      token: 'token'
     }
-  }, {
-    token: 'token'
-  }
   )
 
   const client = container.resolve('exampleClient')

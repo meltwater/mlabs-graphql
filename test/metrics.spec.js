@@ -5,10 +5,7 @@ import gql from 'graphql-tag'
 import { Registry } from 'prom-client'
 import createLogger from '@meltwater/mlabs-logger'
 
-import {
-  createClient,
-  collectClientMetrics
-} from '../lib'
+import { createClient, collectClientMetrics } from '../lib'
 
 test.beforeEach(t => {
   nock.disableNetConnect()
@@ -27,21 +24,38 @@ test.beforeEach(t => {
   const api = 'https://example.com'
   const gqlPath = `/${uuid4()}`
 
-  const client = (t, options = {}) => createClient({
-    origin: api,
-    retry: { retries: 0 },
-    metricRegistry: register,
-    log: createLogger({ t }),
-    ...options
-  })
+  const client = (t, options = {}) =>
+    createClient({
+      origin: api,
+      retry: { retries: 0 },
+      metricRegistry: register,
+      log: createLogger({ t }),
+      ...options
+    })
 
   t.context.api = api
   t.context.gqlPath = gqlPath
   t.context.register = register
   t.context.client = client
   t.context.id = uuid4()
-  t.context.query = gql`query DoFoo {__schema {types {name}}}`
-  t.context.mutation = gql`mutation DoBar {__schema {types {name}}}`
+  t.context.query = gql`
+    query DoFoo {
+      __schema {
+        types {
+          name
+        }
+      }
+    }
+  `
+  t.context.mutation = gql`
+    mutation DoBar {
+      __schema {
+        types {
+          name
+        }
+      }
+    }
+  `
   t.context.data = { __schema: { types: [{ name: 'Root' }] } }
 })
 
@@ -51,8 +65,13 @@ test('get', async t => {
   const badPath = `/bad/${gqlPath}`
   const goodClient = t.context.client(t, { path: goodPath })
   const badClient = t.context.client(t, { path: badPath })
-  nock(api).post(goodPath).times(3).reply(200, { data })
-  nock(api).post(badPath).reply(500, { data })
+  nock(api)
+    .post(goodPath)
+    .times(3)
+    .reply(200, { data })
+  nock(api)
+    .post(badPath)
+    .reply(500, { data })
   await Promise.all([
     goodClient.query({ query }),
     goodClient.mutate({ mutation })
@@ -65,9 +84,7 @@ test('get', async t => {
 
   // Remove metric line that depends on millisecond timing
   const m = metrics.split('\n')
-  const snapshot = [
-    ...m.slice(0, 26)
-  ].join('\n')
+  const snapshot = [...m.slice(0, 26)].join('\n')
 
   t.snapshot(snapshot)
 })
