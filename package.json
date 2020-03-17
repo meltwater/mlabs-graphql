@@ -127,7 +127,8 @@
     "koa-bodyparser": "^4.2.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "type-is": "^1.6.16"
+    "type-is": "^1.6.16",
+    "uuid": "^7.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

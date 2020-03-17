@@ -1,6 +1,6 @@
 import test from 'ava'
 import nock from 'nock'
-import uuid4 from 'uuid/v4'
+import { v4 as uuidv4 } from 'uuid'
 import gql from 'graphql-tag'
 import { Registry } from 'prom-client'
 import createLogger from '@meltwater/mlabs-logger'
@@ -22,7 +22,7 @@ test.beforeEach(t => {
   })
 
   const api = 'https://example.com'
-  const gqlPath = `/${uuid4()}`
+  const gqlPath = `/${uuidv4()}`
 
   const client = (t, options = {}) =>
     createClient({
@@ -37,7 +37,7 @@ test.beforeEach(t => {
   t.context.gqlPath = gqlPath
   t.context.register = register
   t.context.client = client
-  t.context.id = uuid4()
+  t.context.id = uuidv4()
   t.context.query = gql`
     query DoFoo {
       __schema {
