@@ -7,7 +7,7 @@ import createLogger from '@meltwater/mlabs-logger'
 
 import { createClient, collectClientMetrics } from '../lib'
 
-test.beforeEach(t => {
+test.beforeEach((t) => {
   nock.disableNetConnect()
 
   const register = new Registry()
@@ -59,19 +59,14 @@ test.beforeEach(t => {
   t.context.data = { __schema: { types: [{ name: 'Root' }] } }
 })
 
-test('get', async t => {
+test('get', async (t) => {
   const { api, gqlPath, query, mutation, data } = t.context
   const goodPath = `/good/${gqlPath}`
   const badPath = `/bad/${gqlPath}`
   const goodClient = t.context.client(t, { path: goodPath })
   const badClient = t.context.client(t, { path: badPath })
-  nock(api)
-    .post(goodPath)
-    .times(3)
-    .reply(200, { data })
-  nock(api)
-    .post(badPath)
-    .reply(500, { data })
+  nock(api).post(goodPath).times(3).reply(200, { data })
+  nock(api).post(badPath).reply(500, { data })
   await Promise.all([
     goodClient.query({ query }),
     goodClient.mutate({ mutation })

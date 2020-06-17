@@ -37,7 +37,7 @@ export const koa = ({ log, schema = basicSchema }) => async (port = 9000) => {
   })
 }
 
-export const remote = options => async (
+export const remote = (options) => async (
   origin = 'https://graphql-pokemon.now.sh',
   path = '/graphql',
   port
