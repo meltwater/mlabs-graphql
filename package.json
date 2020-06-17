@@ -108,7 +108,7 @@
   "dependencies": {
     "@koa/router": "^9.0.1",
     "@meltwater/mlabs-http": "^1.4.0",
-    "@meltwater/mlabs-logger": "^5.3.0",
+    "@meltwater/mlabs-logger": "^6.0.0",
     "@meltwater/phi": "^3.0.0",
     "apollo-cache-inmemory": "^1.1.12",
     "apollo-client": "^2.2.8",

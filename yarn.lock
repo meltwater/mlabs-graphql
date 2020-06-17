@@ -1031,6 +1031,16 @@
     debug "^4.0.1"
     pino "^5.12.0"
 
+"@meltwater/mlabs-logger@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@meltwater/mlabs-logger/-/mlabs-logger-6.0.0.tgz#001f7a6b1315ac9cfe78b4203985b0856da84c8d"
+  integrity sha512-zyS3+Ef1ZltLWBu3sGvQBOMC2fC2mB7bXVE+NRT/LQypayxuZSyRKGtWUNXBtPb+yfmx/yQlYfluegFqg/y6Pg==
+  dependencies:
+    "@meltwater/examplr" "^4.3.0"
+    bunyan-formatter "^1.0.0"
+    debug "^4.0.1"
+    pino "^6.3.2"
+
 "@meltwater/phi@^3.0.0":
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/@meltwater/phi/-/phi-3.8.0.tgz#f538c5e16db446d6ac28b2fbd0bb2ba7b06045d4"
