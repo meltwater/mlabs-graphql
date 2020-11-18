@@ -39,7 +39,7 @@ import gql, { graphql, makeExecutableSchema } from '@meltwater/mlabs-graphql'
 ### `koaGraphql(options)`
 
 [Koa router][koa-router] for [Apollo GraphQL Server][apollo-server]
-[GraphQL Playground] and [GraphQL Voyager].
+[GraphQL Playground].
 
 Creates a new Apollo server instance for each request.
 The server is created with `context` set to the Koa `ctx`
@@ -79,9 +79,6 @@ The server is created using the following logic:
     - `playgroundRoot` (*string*): Path to serve [GraphQL Playground] endpoint.
       If `null`, the endpoint will be unavailable.
       Default: `/playground`.
-    - `voyagerRoot` (*string*): Path to serve [GraphQL Voyager] endpoint.
-      If `null`, the endpoint will be unavailable.
-      Default: `/voyager`.
 
 #### Returns
 
@@ -763,7 +760,6 @@ client.mutate({mutation, name: 'Greeting'})
 [makeRemoteExecutableSchema]: https://www.apollographql.com/docs/graphql-tools/remote-schemas.html#makeRemoteExecutableSchema
 [async-retry]: https://github.com/zeit/async-retry#readme
 [GraphQLClient]: #graphqlclient
-[GraphQL Voyager]: https://github.com/APIs-guru/graphql-voyager
 [GraphQL Playground]: https://github.com/prismagraphql/graphql-playground
 [GraphiQL]: https://github.com/graphql/graphiql
 [apollo-server]: https://www.apollographql.com/docs/apollo-server/

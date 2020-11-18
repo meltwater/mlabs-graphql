@@ -31,7 +31,6 @@ export const koa = ({ log, schema = basicSchema }) => async (port = 9000) => {
   return new Promise(() => {
     app.listen(port, () => {
       log.info(`Playground: http://localhost:${port}/playground`)
-      log.info(`Voyager: http://localhost:${port}/voyager`)
       log.info(`Server: http://localhost:${port}/graphql`)
     })
   })
