@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Update to mlabs-http v2.
 - Update graphql to v15 and graphql-tools to v7.
 - Update all dependencies.
+- License to MIT.
 
 ### Removed
 
