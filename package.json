@@ -116,7 +116,6 @@
     "@meltwater/phi": "^3.0.0",
     "apollo-cache-inmemory": "^1.1.12",
     "apollo-client": "^2.2.8",
-    "apollo-link": "^1.2.1",
     "apollo-link-http": "^1.5.3",
     "apollo-server-core": "^2.3.1",
     "apollo-server-koa": "^2.3.1",
