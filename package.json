@@ -123,7 +123,7 @@
     "awilix": "^4.0.0",
     "graphql": "^15.4.0",
     "graphql-playground-middleware-koa": "^1.6.6",
-    "graphql-tag": "^2.8.0",
+    "graphql-tag": "^2.12.6",
     "graphql-tools": "^7.0.1",
     "isomorphic-unfetch": "^3.0.0",
     "koa-bodyparser": "^4.2.0",
